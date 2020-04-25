@@ -1,1 +1,1 @@
-### A side navigation package we make use at @ignitus-DesignSystem.
+A side navigation package we make use at @ignitus-DesignSystem.
