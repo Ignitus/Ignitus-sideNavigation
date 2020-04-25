@@ -1,0 +1,18 @@
+{
+  "name": "react-sidenavigation",
+  "version": "1.0.0",
+  "description": "React side-navigation.",
+  "main": "index.js",
+  "scripts": {  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ignitus/Ignitus-sideNavigation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ignitus/Ignitus-sideNavigation/issues"
+  },
+  "homepage": "https://github.com/Ignitus/Ignitus-sideNavigation#readme"
+}
