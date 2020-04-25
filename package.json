@@ -1,18 +1,44 @@
 {
-  "name": "react-sidenavigation",
+  "name": "react-side-navigation",
   "version": "1.0.0",
   "description": "React side-navigation.",
-  "main": "index.js",
-  "scripts": {  },
+  "main": "./lib/index.js",
+  "scripts": {
+    "build": "rm ./lib/* && tsc",
+    "format": "prettier --write \"src/**/*.tsx\"",
+    "lint": "tslint -p tsconfig.json"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Ignitus/Ignitus-sideNavigation.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "react",
+    "side-navigation"
+  ],
+  "author": "divyanshu-rawat",
   "license": "ISC",
+  "types": "./lib/index.d.ts",
   "bugs": {
     "url": "https://github.com/Ignitus/Ignitus-sideNavigation/issues"
   },
-  "homepage": "https://github.com/Ignitus/Ignitus-sideNavigation#readme"
+  "files": [
+    "lib/**/*"
+  ],
+  "homepage": "https://github.com/Ignitus/Ignitus-sideNavigation#readme",
+  "devDependencies": {
+    "@types/react": "^16.9.34",
+    "@types/react-dom": "^16.9.6",
+    "@emotion/core": "^10.0.22",
+    "@emotion/styled": "^10.0.23",
+    "prettier": "^2.0.5",
+    "react": "^16.13.1",
+    "tslint": "^6.1.1",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
 }
