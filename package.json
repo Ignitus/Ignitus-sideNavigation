@@ -4,9 +4,10 @@
   "description": "React side-navigation.",
   "main": "./lib/index.js",
   "scripts": {
-    "build": "rm ./lib/* && tsc",
+    "build": "tsc",
     "format": "prettier --write \"src/**/*.tsx\"",
-    "lint": "tslint -p tsconfig.json"
+    "lint": "eslint src/**/*.{ts,tsx} --cache",
+    "lint:fix": "eslint src/**/*.{ts,tsx} --fix"
   },
   "repository": {
     "type": "git",
@@ -29,16 +30,24 @@
   "devDependencies": {
     "@types/react": "^16.9.34",
     "@types/react-dom": "^16.9.6",
-    "@emotion/core": "^10.0.22",
-    "@emotion/styled": "^10.0.23",
+    "@typescript-eslint/eslint-plugin": "^2.29.0",
+    "@typescript-eslint/parser": "^2.29.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^2.5.1",
     "prettier": "^2.0.5",
     "react": "^16.13.1",
-    "tslint": "^6.1.1",
-    "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.8.3"
   },
   "dependencies": {
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "@emotion/core": "^10.0.22",
+    "@emotion/styled": "^10.0.23"
   }
 }
