@@ -1,4 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import styled from '@emotion/styled';
 
-ReactDOM.render(<div>Test</div>, document.getElementById('root'));
+const Temp = styled.div`
+  background: red;
+`;
+
+export const Navigation: React.FC = () => <Temp>Hello</Temp>;
