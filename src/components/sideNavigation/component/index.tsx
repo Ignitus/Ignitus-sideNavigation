@@ -10,6 +10,7 @@ import {
   NavigationContainer,
   NavigationHeading,
   UnorderedList,
+  Arrow,
 } from '../styles';
 
 import { useToggle } from '../../../helpers/hooks/toogleHook';
@@ -40,7 +41,7 @@ const Layers: React.FC<LayersProps> = ({ navItem, nesting, level }) => {
       {!!navItem.children && (
         <HeadingArrowContainer onClick={toggleExpansion} nesting={nesting} level={level}>
           {' '}
-          <Heading nesting={nesting}>{navItem.title}</Heading>{' '}
+          <Heading nesting={nesting}>{navItem.title}</Heading> <Arrow isExpanded={isExpanded} nesting={nesting} />
         </HeadingArrowContainer>
       )}
 

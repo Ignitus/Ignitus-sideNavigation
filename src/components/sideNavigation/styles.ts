@@ -1,11 +1,12 @@
 import styled from '@emotion/styled';
+import isPropValid from '@emotion/is-prop-valid';
 
 import { flexibleRowDiv } from '../../styles';
+import { Arrow as A } from '../Arrow';
+import { Grey, DarkBlue } from '../../helpers/colors';
+import { ArrowProps } from './types';
 
-type ArrowProps = {
-  isexpanded: boolean;
-  nesting?: boolean;
-};
+
 
 type SubNestingProps = {
   nesting?: boolean;
@@ -23,6 +24,13 @@ export const NavigationContainer = styled.nav`
     text-decoration: none;
     color: ${smallTextColor};
   }
+`;
+
+export const Arrow = styled(A, { shouldForwardProp: isPropValid })<ArrowProps>`
+  height: ${props => (props.nesting ? '1.5rem' : '2rem')};
+  fill: ${props => (props.nesting ? Grey : DarkBlue)};
+  transform: ${props => (props.isexpanded ? 'rotate(90deg)' : 'rotate(0deg)')};
+  transition: transform 200ms ease-in-out;
 `;
 
 export const NavigationHeading = styled.h1``;
@@ -57,7 +65,7 @@ export const ListItem = styled.li<SubNestingProps>`
 `;
 
 export const HeadingArrowContainer = styled(flexibleRowDiv)<SubNestingProps>`
-  // margin-top: ${props => (props.nesting ? '0' : '1rem')};
+  margin-top: ${props => (props.nesting ? '0' : '1rem')};
   margin-left: ${props => (props.level ? `${props.level / 2}rem` : '0rem')};
   justify-content: unset;
   align-items: center;

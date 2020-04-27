@@ -3,7 +3,8 @@ export interface ExtensionProps extends LayersProps {
 }
 
 export type ArrowProps = {
-  isExpanded: boolean;
+  isexpanded: boolean;
+  nesting?: boolean;
 };
 
 export interface LayersProps {
