@@ -37,6 +37,8 @@ module.exports = {
   rules: {
     "react/jsx-filename-extension": "off",
     "import/extensions": "off",
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "react/prop-types": "off",
+    "@typescript-eslint/explicit-function-return-type": "off"
   },
 };
