@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { ExtensionProps, LayersProps, NavigationLayerProps, SideNavigationProps } from './types';
+import { ExtensionProps, LayersProps, NavigationLayerProps, SideNavigationProps } from '../types';
 import {
   Divider,
   Heading,
@@ -10,9 +10,9 @@ import {
   NavigationContainer,
   NavigationHeading,
   UnorderedList,
-} from './styles';
+} from '../styles';
 
-import { useToggle } from '../../helpers/hooks/toogleHook';
+import { useToggle } from '../../../helpers/hooks/toogleHook';
 
 export const SideNavigation: React.FC<SideNavigationProps> = ({ navItems }) => (
   <NavigationContainer>
