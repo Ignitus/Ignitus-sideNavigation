@@ -29,7 +29,7 @@ export const NavigationContainer = styled.nav`
 export const Arrow = styled(A, { shouldForwardProp: isPropValid })<ArrowProps>`
   height: ${props => (props.nesting ? '1.5rem' : '2rem')};
   fill: ${props => (props.nesting ? Grey : DarkBlue)};
-  transform: ${props => (props.isexpanded ? 'rotate(90deg)' : 'rotate(0deg)')};
+  transform: ${props => (props.isExpanded ? 'rotate(90deg)' : 'rotate(0deg)')};
   transition: transform 200ms ease-in-out;
 `;
 
@@ -50,7 +50,7 @@ export const Heading = styled.h5<SubNestingProps>`
 
 export const UnorderedList = styled.ul<ArrowProps>`
   list-style: none;
-  display: ${props => (props.isexpanded ? 'block' : 'none')};
+  display: ${props => (props.isExpanded ? 'block' : 'none')};
   padding: 0;
 `;
 
