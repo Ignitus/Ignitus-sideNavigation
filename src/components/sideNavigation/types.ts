@@ -7,6 +7,10 @@ export type ArrowProps = {
   nesting?: boolean;
 };
 
+export type SubNestingProps = {
+  nesting?: boolean;
+  level?: number;
+};
 export interface LayersProps {
   navItem: navItem;
   nesting?: boolean;

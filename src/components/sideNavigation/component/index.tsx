@@ -54,14 +54,14 @@ const Extension: React.FC<ExtensionProps> = ({ navItem, isExpanded, level, nesti
   if (navItem.route) {
     return (
       <Link to={navItem.route}>
-        <ListItem level={level}>{navItem.title}</ListItem>
+        <ListItem nesting={nesting} level={level}>{navItem.title}</ListItem>
       </Link>
     );
   }
   return (
     navItem.children && (
       <UnorderedList isExpanded={isExpanded}>
-        <NavigationLayers navItems={navItem.children} nesting={nesting} level={level + 1} />
+        <NavigationLayers navItems={navItem.children} nesting={true} level={level + 1} />
       </UnorderedList>
     )
   );
