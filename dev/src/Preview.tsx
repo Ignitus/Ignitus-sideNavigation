@@ -53,7 +53,7 @@ export const Preview: React.FC = () => (
       <RightRow>
         <SideNavigation navItems={navItems} />
       </RightRow>
-      <LeftRow>Hey 👋 </LeftRow>
+      <LeftRow></LeftRow>
     </Container>
   </Router>
 );

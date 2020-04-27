@@ -18,7 +18,7 @@ import { useToggle } from '../../../helpers/hooks/toogleHook';
 export const SideNavigation: React.FC<SideNavigationProps> = ({ navItems }) => (
   <NavigationContainer>
     <NavigationHeading>
-      <Link to="/">Home</Link>
+      <Link to="/">Home 👋</Link>
     </NavigationHeading>
     <Divider />
     <NavigationLayers navItems={navItems} level={0} />
