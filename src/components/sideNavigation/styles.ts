@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-import { flexibleRowDiv } from '../styles';
+import { flexibleRowDiv } from '../../styles';
 
 type ArrowProps = {
   isexpanded: boolean;

@@ -12,7 +12,7 @@ import {
   UnorderedList,
 } from './styles';
 
-import { useToggle } from './hook';
+import { useToggle } from '../../helpers/hooks/toogleHook';
 
 export const SideNavigation: React.FC<SideNavigationProps> = ({ navItems }) => (
   <NavigationContainer>
