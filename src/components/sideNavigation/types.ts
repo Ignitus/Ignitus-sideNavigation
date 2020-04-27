@@ -2,6 +2,10 @@ export interface ExtensionProps extends LayersProps {
   isExpanded: boolean;
 }
 
+export type ArrowProps = {
+  isExpanded: boolean;
+};
+
 export interface LayersProps {
   navItem: navItem;
   nesting?: boolean;
