@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { ExtensionProps, LayersProps, NavigationLayerProps, SideNavigationProps } from '../types';
@@ -9,21 +9,34 @@ import {
   ListItem,
   NavigationContainer,
   NavigationHeading,
+  NavigationLayersContainer,
+  RightArrow,
   UnorderedList,
   Arrow,
 } from '../styles';
+import { breakPoint } from '../../../styles';
 
 import { useToggle } from '../../../helpers/hooks/toogleHook';
 
-export const SideNavigation: React.FC<SideNavigationProps> = ({ navItems }) => (
-  <NavigationContainer>
-    <NavigationHeading>
-      <Link to="/">Home 👋</Link>
-    </NavigationHeading>
-    <Divider />
-    <NavigationLayers navItems={navItems} level={0} />
-  </NavigationContainer>
-);
+export const SideNavigation: React.FC<SideNavigationProps> = ({ navItems }) => {
+  // TO MAKE NAVIGATION OPEN ON SCREENS > breakPoint on initial render
+  const [isExpanded, toggleExpansion] = useState(window.innerWidth > breakPoint);
+
+  return (
+    <NavigationContainer>
+      <NavigationHeading>
+        <Link to="/">Home 👋</Link>
+        <RightArrow isExpanded={isExpanded} onClick={() => toggleExpansion(!isExpanded)} />
+      </NavigationHeading>
+      {isExpanded && (
+        <NavigationLayersContainer>
+          <Divider />
+          <NavigationLayers navItems={navItems} level={0} />
+        </NavigationLayersContainer>
+      )}
+    </NavigationContainer>
+  );
+};
 
 const NavigationLayers: React.FC<NavigationLayerProps> = ({ navItems, nesting, level }) => (
   <React.Fragment>
