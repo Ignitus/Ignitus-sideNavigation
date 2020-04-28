@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import isPropValid from '@emotion/is-prop-valid';
 
-import { flexibleRowDiv } from '../../styles';
+import { breakPoint, flexibleRowDiv } from '../../styles';
 import { Arrow as A } from '../Arrow';
 import { Grey, DarkBlue, White } from '../../helpers/colors';
 import { ArrowProps, SubNestingProps } from './types';
@@ -14,6 +14,17 @@ export const NavigationContainer = styled.nav`
   padding-left: 2rem;
 `;
 
+export const RightArrow = styled(A, { shouldForwardProp: isPropValid })<ArrowProps>`
+  height: 2rem;
+  margin-left: auto;
+  margin-right: 2rem;
+  transform: ${props => (props.isExpanded ? 'rotate(90deg)' : 'rotate(0deg)')};
+  transition: transform 200ms ease-in-out;
+  @media (min-width: ${breakPoint + 1}px) {
+    display: none;
+  }
+`;
+
 export const Arrow = styled(A, { shouldForwardProp: isPropValid })<ArrowProps>`
   height: ${props => (props.nesting ? '1.5rem' : '2rem')};
   fill: ${props => (props.nesting ? Grey : DarkBlue)};
@@ -22,6 +33,8 @@ export const Arrow = styled(A, { shouldForwardProp: isPropValid })<ArrowProps>`
 `;
 
 export const NavigationHeading = styled.h1`
+  display: flex;
+  flex-direction: row;
   a {
     text-decoration: none;
     color: ${Grey};

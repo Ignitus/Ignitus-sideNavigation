@@ -3,6 +3,8 @@ import { css } from '@emotion/core';
 
 import { GreyLightS1, GreyLight } from './helpers/colors';
 
+export const breakPoint = 768;
+
 export const GlobalStyle = css`
   * {
     font-family: 'Roboto', sans-serif;
@@ -39,6 +41,9 @@ export const Container = styled.div`
   * {
     box-sizing: border-box;
   }
+  @media (max-width: ${breakPoint}px) {
+    flex-direction: column;
+  }
 `;
 
 export const Reset = `
@@ -51,7 +56,7 @@ export const Reset = `
 export const RightRow = styled.div`
   flex: 2;
   height: 100vh;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: auto;
   background: #fafbfd;
   ${Reset}
