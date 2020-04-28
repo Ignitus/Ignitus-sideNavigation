@@ -41,7 +41,7 @@ export const Reset = `
 export const RightRow = styled.div`
   flex: 1.5;
   height: 100vh;
-  // overflow-y: overlay;
+  overflow-y: overlay;
   overflow-x: auto;
   background: #fafbfd;
   ${Reset}
@@ -53,7 +53,7 @@ export const RightRow = styled.div`
 export const LeftRow = styled.div`
   flex: 5;
   height: 100vh;
-  // overflow-y: scroll;
+  overflow-y: scroll;
   overflow-x: hidden;
   ${Reset}
 `;

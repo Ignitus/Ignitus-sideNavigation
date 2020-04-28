@@ -6,37 +6,41 @@ import { SideNavigation, Container, GlobalStyle, LeftRow, RightRow, navItem } fr
 
 const navItems: navItem[] = [
   {
-    title: 'First',
-    route: 'hell',
-  },
-  {
-    title: 'Second',
+    title: 'Atoms',
     children: [
       {
-        title: 'Second First',
-        route: 'hi',
+        title: 'Color Palette',
+        route: '/colors',
+      },
+      {
+        title: 'Iconography',
+        route: '/icons',
+      },
+      {
+        title: 'Input Fields',
+        children: [
+          {
+            title: 'Search',
+            route: '/interface/searchInput',
+          },
+          {
+            title: 'Primary',
+            route: '/interface/primaryInput',
+          },
+        ],
       },
     ],
   },
   {
-    title: 'Third',
-    route: 'b',
-  },
-  {
-    title: 'Second',
+    title: 'Molecules',
     children: [
       {
-        title: 'Second First',
-        route: 'hi',
+        title: 'Overlay',
+        route: '/overlay',
       },
       {
-        title: 'Second',
-        children: [
-          {
-            title: 'Second First',
-            route: 'hi',
-          },
-        ],
+        title: 'Banners',
+        route: '/interface/banner',
       },
     ],
   },
@@ -49,7 +53,7 @@ export const Preview: React.FC = () => (
       <RightRow>
         <SideNavigation navItems={navItems} />
       </RightRow>
-      <LeftRow>hello</LeftRow>
+      <LeftRow></LeftRow>
     </Container>
   </Router>
 );
