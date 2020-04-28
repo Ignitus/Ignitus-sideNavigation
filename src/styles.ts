@@ -1,10 +1,20 @@
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
 
+import { GreyLightS1, GreyLight } from './helpers/colors';
+
 export const GlobalStyle = css`
   * {
     font-family: 'Roboto', sans-serif;
     src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+  }
+  ::-webkit-scrollbar {
+    width: 8px;
+    background: ${GreyLight};
+  }
+  ::-webkit-scrollbar-thumb {
+    background: ${GreyLightS1};
+    border-radius: 120px;
   }
 `;
 
@@ -39,12 +49,15 @@ export const Reset = `
 `;
 
 export const RightRow = styled.div`
-  flex: 1.5;
+  flex: 2;
   height: 100vh;
-  overflow-y: overlay;
+  overflow-y: scroll;
   overflow-x: auto;
   background: #fafbfd;
   ${Reset}
+  @media (min-width: 1024px) {
+    flex: 1.5;
+  }
   @media (min-width: 1466px) {
     flex: 1;
   }
@@ -53,7 +66,7 @@ export const RightRow = styled.div`
 export const LeftRow = styled.div`
   flex: 5;
   height: 100vh;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
   ${Reset}
 `;

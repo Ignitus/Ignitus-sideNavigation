@@ -5,7 +5,7 @@ import { flexibleRowDiv } from '../../styles';
 import { Arrow as A } from '../Arrow';
 import { Grey, DarkBlue, White } from '../../helpers/colors';
 import { ArrowProps, SubNestingProps } from './types';
-import { SM, XL, Normal, Medium } from '../../helpers/fonts';
+import { SM, XL, Bold, Medium } from '../../helpers/fonts';
 
 const margin = '1rem';
 
@@ -36,7 +36,7 @@ export const Divider = styled.hr`
 export const Heading = styled.h5<SubNestingProps>`
   font-size: ${props => (props.nesting ? SM : XL)};
   color: ${props => (props.nesting ? Grey : DarkBlue)};
-  font-weight: ${props => (props.nesting ? Normal : Medium)};
+  font-weight: ${props => (props.nesting ? Bold : Medium)};
   padding: ${props => (props.nesting ? '0.5rem' : '0')};
   margin: 0;
 `;
@@ -45,6 +45,7 @@ export const UnorderedList = styled.ul<ArrowProps>`
   list-style: none;
   display: ${props => (props.isExpanded ? 'block' : 'none')};
   padding: 0;
+  margin: 0;
   a {
     text-decoration: none;
     color: ${Grey};
@@ -53,7 +54,7 @@ export const UnorderedList = styled.ul<ArrowProps>`
 
 export const ListItem = styled.li<SubNestingProps>`
   padding: 0.5rem;
-  margin-left: ${props => (props.level ? `${props.level / 2}rem` : '0rem')};
+  margin-left: ${props => (props.level ? `${props.level / 3}rem` : '0rem')};
   cursor: pointer;
   &:hover {
     background: ${DarkBlue};
@@ -63,7 +64,8 @@ export const ListItem = styled.li<SubNestingProps>`
 
 export const HeadingArrowContainer = styled(flexibleRowDiv)<SubNestingProps>`
   margin-top: ${props => (props.nesting ? '0' : '1rem')};
-  margin-left: ${props => (props.level ? `${props.level / 2}rem` : '0rem')};
+  margin-bottom: ${props => (props.nesting ? '0' : '0.5rem')};
+  margin-left: ${props => (props.level ? `${props.level / 3}rem` : '0rem')};
   justify-content: unset;
   align-items: center;
   cursor: pointer;

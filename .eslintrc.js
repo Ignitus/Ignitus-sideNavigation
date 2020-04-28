@@ -39,6 +39,9 @@ module.exports = {
     "import/extensions": "off",
     "import/prefer-default-export": "off",
     "react/prop-types": "off",
-    "@typescript-eslint/explicit-function-return-type": "off"
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-inferrable-types": "off",
+    "react/jsx-fragments": "off",
+    "import/no-extraneous-dependencies": "off"
   },
 };

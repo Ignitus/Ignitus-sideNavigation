@@ -34,7 +34,7 @@ const NavigationLayers: React.FC<NavigationLayerProps> = ({ navItems, nesting, l
 );
 
 const Layers: React.FC<LayersProps> = ({ navItem, nesting, level }) => {
-  const [isExpanded, toggleExpansion] = useToggle(false);
+  const [isExpanded, toggleExpansion] = useToggle(true);
 
   return (
     <React.Fragment>
@@ -54,14 +54,16 @@ const Extension: React.FC<ExtensionProps> = ({ navItem, isExpanded, level, nesti
   if (navItem.route) {
     return (
       <Link to={navItem.route}>
-        <ListItem nesting={nesting} level={level}>{navItem.title}</ListItem>
+        <ListItem nesting={nesting} level={level}>
+          {navItem.title}
+        </ListItem>
       </Link>
     );
   }
   return (
     navItem.children && (
       <UnorderedList isExpanded={isExpanded}>
-        <NavigationLayers navItems={navItem.children} nesting={true} level={level + 1} />
+        <NavigationLayers navItems={navItem.children} level={level + 1} nesting />
       </UnorderedList>
     )
   );
