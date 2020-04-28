@@ -14,12 +14,6 @@ export const NavigationContainer = styled.nav`
   padding-left: 2rem;
 `;
 
-export const NavigationLayersContainer = styled.div`
-  @media (max-width: ${breakPoint}px) {
-    // display: none;
-  }
-`;
-
 export const RightArrow = styled(A, { shouldForwardProp: isPropValid })<ArrowProps>`
   height: 2rem;
   margin-left: auto;
