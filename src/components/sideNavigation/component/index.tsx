@@ -34,7 +34,7 @@ const NavigationLayers: React.FC<NavigationLayerProps> = ({ navItems, nesting, l
 );
 
 const Layers: React.FC<LayersProps> = ({ navItem, nesting, level }) => {
-  const [isExpanded, toggleExpansion] = useToggle(true);
+  const [isExpanded, toggleExpansion] = useToggle(level === 0);
 
   return (
     <React.Fragment>
