@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import shortid from 'shortid';
 
 import { ExtensionProps, LayersProps, NavigationLayerProps, SideNavigationProps } from '../types';
 import {
@@ -29,10 +30,10 @@ export const SideNavigation: React.FC<SideNavigationProps> = ({ navItems }) => {
         <RightArrow isExpanded={isExpanded} onClick={() => toggleExpansion(!isExpanded)} />
       </NavigationHeading>
       {isExpanded && (
-        <React.Fragment>
+        <NavigationLayersContainer>
           <Divider />
           <NavigationLayers navItems={navItems} level={0} />
-        </React.Fragment>
+        </NavigationLayersContainer>
       )}
     </NavigationContainer>
   );
@@ -41,7 +42,7 @@ export const SideNavigation: React.FC<SideNavigationProps> = ({ navItems }) => {
 const NavigationLayers: React.FC<NavigationLayerProps> = ({ navItems, nesting, level }) => (
   <React.Fragment>
     {navItems.map(navItem => (
-      <Layers navItem={navItem} key={navItem.title} nesting={nesting} level={level} />
+      <Layers key={shortid.generate()} navItem={navItem} nesting={nesting} level={level} />
     ))}
   </React.Fragment>
 );

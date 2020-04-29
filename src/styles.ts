@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
 
-import { GreyLightS1, GreyLight } from './helpers/colors';
+import { GreyLightS1, GreyLightS2, GreyLight } from './helpers/colors';
 
 export const breakPoint = 768;
 
@@ -58,7 +58,7 @@ export const RightRow = styled.div`
   height: 100vh;
   overflow-y: auto;
   overflow-x: auto;
-  background: #fafbfd;
+  background: ${GreyLightS2};
   ${Reset}
   @media (min-width: 1024px) {
     flex: 1.5;
@@ -74,4 +74,7 @@ export const LeftRow = styled.div`
   overflow-y: auto;
   overflow-x: hidden;
   ${Reset}
+  @media (max-width: ${breakPoint}px) {
+    padding-top: 5rem;
+  }
 `;

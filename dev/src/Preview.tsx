@@ -144,8 +144,7 @@ export const Preview: React.FC = () => (
       <RightRow>
         <SideNavigation navItems={navItems} />
       </RightRow>
-      <LeftRow>
-      </LeftRow>
+      <LeftRow>Content</LeftRow>
     </Container>
   </Router>
 );
