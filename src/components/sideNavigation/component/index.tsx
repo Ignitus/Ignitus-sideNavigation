@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import shortid from 'shortid';
 
 import { ExtensionProps, LayersProps, NavigationLayerProps, SideNavigationProps } from '../types';
 import {
@@ -41,8 +40,8 @@ export const SideNavigation: React.FC<SideNavigationProps> = ({ navItems }) => {
 
 const NavigationLayers: React.FC<NavigationLayerProps> = ({ navItems, nesting, level }) => (
   <React.Fragment>
-    {navItems.map(navItem => (
-      <Layers key={shortid.generate()} navItem={navItem} nesting={nesting} level={level} />
+    {navItems.map((navItem, ind) => (
+      <Layers key={`${navItem.title}_${ind}`} navItem={navItem} nesting={nesting} level={level} />
     ))}
   </React.Fragment>
 );
