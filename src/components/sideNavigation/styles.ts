@@ -3,7 +3,7 @@ import isPropValid from '@emotion/is-prop-valid';
 
 import { breakPoint, flexibleRowDiv } from '../../styles';
 import { Arrow as A } from '../Arrow';
-import { Grey, DarkBlue, White } from '../../helpers/colors';
+import { Grey, GreyLightS2, DarkBlue, White } from '../../helpers/colors';
 import { ArrowProps, SubNestingProps } from './types';
 import { SM, XL, Bold, Medium } from '../../helpers/fonts';
 
@@ -12,6 +12,18 @@ const margin = '1rem';
 export const NavigationContainer = styled.nav`
   width: 100%;
   padding-left: 2rem;
+  @media (max-width: ${breakPoint}px) {
+    position: fixed;
+    overflow-y: auto;
+    z-index: 1;
+    background: ${GreyLightS2};
+  }
+`;
+
+export const NavigationLayersContainer = styled.div`
+  @media (max-width: ${breakPoint}px) {
+    height: 100vh;
+  }
 `;
 
 export const RightArrow = styled(A, { shouldForwardProp: isPropValid })<ArrowProps>`

@@ -42,6 +42,7 @@ module.exports = {
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-inferrable-types": "off",
     "react/jsx-fragments": "off",
-    "import/no-extraneous-dependencies": "off"
+    "import/no-extraneous-dependencies": "off",
+    "react/no-array-index-key": "off"
   },
 };
