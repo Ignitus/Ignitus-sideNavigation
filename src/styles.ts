@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
 
-import { GreyLightS1, GreyLightS2, GreyLight } from './helpers/colors';
+import { GreyLightS1, GreyLight } from './helpers/colors';
 
 export const breakPoint = 768;
 
@@ -53,12 +53,16 @@ export const Reset = `
   }
 `;
 
-export const RightRow = styled.div`
+interface RightRowProps {
+  background: string;
+}
+
+export const RightRow = styled.div<RightRowProps>`
   flex: 2;
   height: 100vh;
   overflow-y: auto;
   overflow-x: auto;
-  background: ${GreyLightS2};
+  background: ${props => props.background};
   ${Reset}
   @media (min-width: 1024px) {
     flex: 1.5;
