@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Global } from '@emotion/core';
 
-import { SideNavigation, Container, GlobalStyle, LeftRow, RightRow, navItem } from '../../src';
+import { SideNavigation, Container, GlobalStyle, LeftRow, navItem } from '../../src';
 
 const navItems: navItem[] = [
   {
@@ -141,9 +141,7 @@ export const Preview: React.FC = () => (
   <Router>
     <Global styles={GlobalStyle} />
     <Container>
-      <RightRow>
-        <SideNavigation navItems={navItems} />
-      </RightRow>
+      <SideNavigation navItems={navItems} />
       <LeftRow>Content</LeftRow>
     </Container>
   </Router>

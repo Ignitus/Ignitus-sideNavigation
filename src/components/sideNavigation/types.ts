@@ -10,7 +10,9 @@ export type ArrowProps = {
 export type SubNestingProps = {
   nesting?: boolean;
   level?: number;
+  themeColor: string;
 };
+
 export interface LayersProps {
   navItem: navItem;
   nesting?: boolean;
@@ -29,5 +31,11 @@ export type navItem = {
 };
 
 export interface SideNavigationProps {
+  heading?: {
+    title: string;
+    route: string;
+  };
   navItems: navItem[];
+  theme?: string;
+  navBackground?: string;
 }

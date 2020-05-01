@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { ExtensionProps, LayersProps, NavigationLayerProps, SideNavigationProps } from '../types';
@@ -14,27 +14,47 @@ import {
   UnorderedList,
   Arrow,
 } from '../styles';
-import { breakPoint } from '../../../styles';
+import { breakPoint, RightRow } from '../../../styles';
+import { DarkBlue, WhiteLilac } from '../../../helpers/colors';
 
 import { useToggle } from '../../../helpers/hooks/toogleHook';
 
-export const SideNavigation: React.FC<SideNavigationProps> = ({ navItems }) => {
-  // TO MAKE NAVIGATION OPEN ON SCREENS > breakPoint on initial render
+interface ThemeWrapperProps {
+  navBackground: string;
+  theme: string;
+}
+
+const ThemeWrapper = React.createContext({} as ThemeWrapperProps);
+
+export const SideNavigation: React.FC<SideNavigationProps> = ({
+  heading = {
+    title: 'Home 👋',
+    route: '/',
+  },
+  navBackground = WhiteLilac,
+  navItems,
+  theme = DarkBlue,
+}) => {
+  // TO MAKE NAVIGATION OPEN ON (SCREENS > breakPoint) on initial render
   const [isExpanded, toggleExpansion] = useState(window.innerWidth > breakPoint);
 
   return (
-    <NavigationContainer>
-      <NavigationHeading>
-        <Link to="/">Home 👋</Link>
-        <RightArrow isExpanded={isExpanded} onClick={() => toggleExpansion(!isExpanded)} />
-      </NavigationHeading>
-      {isExpanded && (
-        <NavigationLayersContainer>
-          <Divider />
-          <NavigationLayers navItems={navItems} level={0} />
-        </NavigationLayersContainer>
-      )}
-    </NavigationContainer>
+    <ThemeWrapper.Provider value={{ navBackground, theme }}>
+      <RightRow background={navBackground}>
+        <NavigationContainer>
+          <NavigationHeading>
+            <Link to={heading.route}>{heading.title}</Link>
+            <RightArrow isExpanded={isExpanded} onClick={() => toggleExpansion(!isExpanded)} />
+          </NavigationHeading>
+          {isExpanded && (
+            <NavigationLayersContainer>
+              <Divider />
+              <NavigationLayers navItems={navItems} level={0} />
+            </NavigationLayersContainer>
+          )}
+        </NavigationContainer>
+      </RightRow>
+    </ThemeWrapper.Provider>
   );
 };
 
@@ -49,12 +69,17 @@ const NavigationLayers: React.FC<NavigationLayerProps> = ({ navItems, nesting, l
 const Layers: React.FC<LayersProps> = ({ navItem, nesting, level }) => {
   const [isExpanded, toggleExpansion] = useToggle(level === 0);
 
+  const theme = useContext(ThemeWrapper);
+
   return (
     <React.Fragment>
       {!!navItem.children && (
-        <HeadingArrowContainer onClick={toggleExpansion} nesting={nesting} level={level}>
+        <HeadingArrowContainer themeColor={theme.theme} onClick={toggleExpansion} nesting={nesting} level={level}>
           {' '}
-          <Heading nesting={nesting}>{navItem.title}</Heading> <Arrow isExpanded={isExpanded} nesting={nesting} />
+          <Heading themeColor={theme.theme} nesting={nesting}>
+            {navItem.title}
+          </Heading>{' '}
+          <Arrow isExpanded={isExpanded} nesting={nesting} />
         </HeadingArrowContainer>
       )}
 
@@ -64,10 +89,12 @@ const Layers: React.FC<LayersProps> = ({ navItem, nesting, level }) => {
 };
 
 const Extension: React.FC<ExtensionProps> = ({ navItem, isExpanded, level, nesting }) => {
+  const theme = useContext(ThemeWrapper);
+
   if (navItem.route) {
     return (
       <Link to={navItem.route}>
-        <ListItem nesting={nesting} level={level}>
+        <ListItem themeColor={theme.theme} nesting={nesting} level={level}>
           {navItem.title}
         </ListItem>
       </Link>

@@ -3,7 +3,7 @@ import isPropValid from '@emotion/is-prop-valid';
 
 import { breakPoint, flexibleRowDiv } from '../../styles';
 import { Arrow as A } from '../Arrow';
-import { Grey, GreyLightS2, DarkBlue, White } from '../../helpers/colors';
+import { Grey, WhiteLilac, DarkBlue, White } from '../../helpers/colors';
 import { ArrowProps, SubNestingProps } from './types';
 import { SM, XL, Bold, Medium } from '../../helpers/fonts';
 
@@ -16,7 +16,7 @@ export const NavigationContainer = styled.nav`
     position: fixed;
     overflow-y: auto;
     z-index: 1;
-    background: ${GreyLightS2};
+    background: ${WhiteLilac};
   }
 `;
 
@@ -60,7 +60,7 @@ export const Divider = styled.hr`
 
 export const Heading = styled.h5<SubNestingProps>`
   font-size: ${props => (props.nesting ? SM : XL)};
-  color: ${props => (props.nesting ? Grey : DarkBlue)};
+  color: ${props => (props.nesting ? Grey : props.themeColor)};
   font-weight: ${props => (props.nesting ? Bold : Medium)};
   padding: ${props => (props.nesting ? '0.5rem' : '0')};
   margin: 0;
@@ -82,7 +82,7 @@ export const ListItem = styled.li<SubNestingProps>`
   margin-left: ${props => (props.level ? `${props.level / 3}rem` : '0rem')};
   cursor: pointer;
   &:hover {
-    background: ${DarkBlue};
+    background: ${props => props.themeColor};
     color: ${White};
   }
 `;
