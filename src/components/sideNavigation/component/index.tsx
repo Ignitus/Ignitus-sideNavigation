@@ -15,7 +15,7 @@ import {
   Arrow,
 } from '../styles';
 import { breakPoint, RightRow } from '../../../styles';
-import { DarkBlue, GreyLightS2 } from '../../../helpers/colors';
+import { DarkBlue, WhiteLilac } from '../../../helpers/colors';
 
 import { useToggle } from '../../../helpers/hooks/toogleHook';
 
@@ -31,7 +31,7 @@ export const SideNavigation: React.FC<SideNavigationProps> = ({
     title: 'Home 👋',
     route: '/',
   },
-  navBackground = GreyLightS2,
+  navBackground = WhiteLilac,
   navItems,
   theme = DarkBlue,
 }) => {
