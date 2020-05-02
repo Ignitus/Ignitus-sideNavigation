@@ -1,21 +1,19 @@
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
 
-import { GreyLightS1, GreyLight } from './helpers/colors';
+import { Nobel, GreyLight } from './helpers/colors';
 
 export const breakPoint = 768;
 
 export const GlobalStyle = css`
   * {
-    font-family: 'Roboto', sans-serif;
-    src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
   }
   ::-webkit-scrollbar {
     width: 8px;
     background: ${GreyLight};
   }
   ::-webkit-scrollbar-thumb {
-    background: ${GreyLightS1};
+    background: ${Nobel};
     border-radius: 120px;
   }
 `;
@@ -34,12 +32,39 @@ export const flexibleRowDiv = styled.div`
   justify-content: center;
 `;
 
-export const Container = styled.div`
+interface ContainerProps {
+  fontFace?: {
+    name: string;
+    url?: string;
+  };
+}
+
+export const Container = styled.div<ContainerProps>`
   display: flex;
   flex-direction: row;
   box-sizing: border-box;
   * {
     box-sizing: border-box;
+    ${props =>
+      !props.fontFace || props.fontFace.name === 'default'
+        ? `
+          font-family: 'Roboto', sans-serif;
+          src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+        `
+        : `
+          ${
+            props.fontFace.name !== 'none' &&
+            `
+              font-family: ${props.fontFace.name};
+              ${
+                props.fontFace.url &&
+                `
+                src: ${props.fontFace.url};
+              `
+              }
+            `
+          }
+        `}
   }
   @media (max-width: ${breakPoint}px) {
     flex-direction: column;
