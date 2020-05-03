@@ -1,3 +1,11 @@
+export type navbarTheme = {
+  textColor: string;
+  hover: {
+    navItemBackground: string;
+    navItemTextColor: string;
+  };
+};
+
 export interface ExtensionProps extends LayersProps {
   isExpanded: boolean;
 }
@@ -5,12 +13,13 @@ export interface ExtensionProps extends LayersProps {
 export type ArrowProps = {
   isExpanded: boolean;
   nesting?: boolean;
+  theme: navbarTheme;
 };
 
 export type SubNestingProps = {
   nesting?: boolean;
   level?: number;
-  themeColor: string;
+  theme: navbarTheme;
 };
 
 export interface LayersProps {
@@ -36,6 +45,6 @@ export interface SideNavigationProps {
     route: string;
   };
   navItems: navItem[];
-  theme?: string;
+  theme?: navbarTheme;
   navBackground?: string;
 }
