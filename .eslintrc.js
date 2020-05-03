@@ -43,6 +43,7 @@ module.exports = {
     "@typescript-eslint/no-inferrable-types": "off",
     "react/jsx-fragments": "off",
     "import/no-extraneous-dependencies": "off",
-    "react/no-array-index-key": "off"
+    "react/no-array-index-key": "off",
+    "react/jsx-props-no-spreading": "off"
   },
 };
