@@ -6,8 +6,6 @@ import { Nobel, GreyLight } from './helpers/colors';
 export const breakPoint = 768;
 
 export const GlobalStyle = css`
-  * {
-  }
   ::-webkit-scrollbar {
     width: 8px;
     background: ${GreyLight};
@@ -42,7 +40,6 @@ interface ContainerProps {
 export const Container = styled.div<ContainerProps>`
   display: flex;
   flex-direction: row;
-  box-sizing: border-box;
   * {
     box-sizing: border-box;
     ${props =>
@@ -105,7 +102,7 @@ export const RightRow = styled.div<RightRowProps>`
   }
 `;
 
-export const LeftRow = styled.div`
+export const Content = styled.div`
   flex: 5;
   height: 100vh;
   overflow-y: auto;

@@ -15,11 +15,11 @@ import {
   Arrow,
 } from '../styles';
 import { breakPoint, RightRow } from '../../../styles';
-import { DarkBlue, Grey, White, WhiteLilac } from '../../../helpers/colors';
-
 import { useToggle } from '../../../helpers/hooks/toogleHook';
 
-interface ThemeWrapperProps {
+import { defaultTheme } from '../../../constants';
+
+export interface ThemeWrapperProps {
   navBackground: string;
   theme: navbarTheme;
 }
@@ -31,15 +31,9 @@ export const SideNavigation: React.FC<SideNavigationProps> = ({
     title: 'Home 👋',
     route: '/',
   },
-  navBackground = WhiteLilac,
+  navBackground = defaultTheme.navBackground,
   navItems,
-  theme = {
-    textColor: Grey,
-    hover: {
-      navItemBackground: DarkBlue,
-      navItemTextColor: White,
-    },
-  },
+  theme = defaultTheme.theme,
 }) => {
   // TO MAKE NAVIGATION OPEN ON (SCREENS > breakPoint) on initial render
   const [isExpanded, toggleExpansion] = useState(window.innerWidth > breakPoint);
