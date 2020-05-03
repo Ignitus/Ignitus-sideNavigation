@@ -88,6 +88,14 @@ export const RightRow = styled.div<RightRowProps>`
   overflow-y: auto;
   overflow-x: auto;
   background: ${props => props.background};
+  nav {
+    @media (max-width: ${breakPoint}px) {
+      position: fixed;
+      overflow-y: auto;
+      z-index: 1;
+      background: ${props => props.background};
+    }
+  }
   ${Reset}
   @media (min-width: 1024px) {
     flex: 1.5;
