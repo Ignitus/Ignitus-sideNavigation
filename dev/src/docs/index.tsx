@@ -53,6 +53,24 @@ export const Docs: React.FC<DocsProps> = ({ theme, updateTheme }) => (
     </ListItem>
 
     <ListItem>
+      Heading color :
+      <Input
+        type="text"
+        placeholder="#000"
+        value={theme.theme.headingColor}
+        onChange={e => {
+          updateTheme({
+            ...theme,
+            theme: {
+              ...theme.theme,
+              headingColor: e.target.value,
+            },
+          });
+        }}
+      />
+    </ListItem>
+
+    <ListItem>
       Hover background :
       <Input
         type="text"
@@ -87,6 +105,27 @@ export const Docs: React.FC<DocsProps> = ({ theme, updateTheme }) => (
               hover: {
                 ...theme.theme.hover,
                 navItemTextColor: e.target.value,
+              },
+            },
+          });
+        }}
+      />
+    </ListItem>
+
+    <ListItem>
+      Hover heading color :
+      <Input
+        type="text"
+        placeholder="#000"
+        value={theme.theme.hover.headingColor}
+        onChange={e => {
+          updateTheme({
+            ...theme,
+            theme: {
+              ...theme.theme,
+              hover: {
+                ...theme.theme.hover,
+                headingColor: e.target.value,
               },
             },
           });
