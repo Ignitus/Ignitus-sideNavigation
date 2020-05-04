@@ -7,6 +7,7 @@ export const defaultTheme: ThemeWrapperProps = {
   theme: {
     headingColor: DarkBlue,
     textColor: Grey,
+    arrowIconColor: Grey,
     hover: {
       headingColor: Grey,
       navItemBackground: DarkBlue,

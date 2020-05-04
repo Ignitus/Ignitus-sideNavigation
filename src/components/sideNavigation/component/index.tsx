@@ -79,7 +79,7 @@ const Layers: React.FC<LayersProps> = ({ navItem, nesting, level }) => {
           <Heading theme={theme} nesting={nesting}>
             {navItem.title}
           </Heading>{' '}
-          <Arrow isExpanded={isExpanded} nesting={nesting} />
+          <Arrow theme={theme} isExpanded={isExpanded} nesting={nesting} />
         </HeadingArrowContainer>
       )}
 
