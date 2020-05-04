@@ -42,7 +42,7 @@ export const SideNavigation: React.FC<SideNavigationProps> = ({
     <ThemeWrapper.Provider value={{ navBackground, theme }}>
       <RightRow background={navBackground}>
         <NavigationContainer>
-          <NavigationHeading>
+          <NavigationHeading theme={theme}>
             <Link to={heading.route}>{heading.title}</Link>
             <RightArrow isExpanded={isExpanded} onClick={() => toggleExpansion(!isExpanded)} />
           </NavigationHeading>
@@ -79,7 +79,7 @@ const Layers: React.FC<LayersProps> = ({ navItem, nesting, level }) => {
           <Heading theme={theme} nesting={nesting}>
             {navItem.title}
           </Heading>{' '}
-          <Arrow isExpanded={isExpanded} nesting={nesting} />
+          <Arrow theme={theme} isExpanded={isExpanded} nesting={nesting} />
         </HeadingArrowContainer>
       )}
 

@@ -1,8 +1,11 @@
 export type navbarTheme = {
   textColor: string;
+  headingColor: string;
+  arrowIconColor: string;
   hover: {
     navItemBackground: string;
     navItemTextColor: string;
+    headingColor: string;
   };
 };
 
