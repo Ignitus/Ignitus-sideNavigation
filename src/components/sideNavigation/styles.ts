@@ -79,7 +79,7 @@ export const ListItem = styled.li<SubNestingProps>`
   margin-left: ${props => (props.level ? `${props.level / 3}rem` : '0rem')};
   cursor: pointer;
   &:hover {
-    background: ${props => props.theme.hover.navItemBackground};
+    background-color: ${props => props.theme.hover.navItemBackground};
     color: ${props => props.theme.hover.navItemTextColor};
   }
 `;

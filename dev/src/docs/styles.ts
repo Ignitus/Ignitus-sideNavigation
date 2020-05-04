@@ -15,7 +15,7 @@ export const ListItem = styled.li`
 
 export const Input = styled.input`
   margin: 0 1rem;
-  background: ${WhiteLilac};
+  background-color: ${WhiteLilac};
   border: 1px solid ${GreyLight};
   padding: 1rem;
   border-radius: 3px;

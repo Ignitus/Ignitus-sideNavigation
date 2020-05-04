@@ -8,10 +8,10 @@ export const breakPoint = 768;
 export const GlobalStyle = css`
   ::-webkit-scrollbar {
     width: 8px;
-    background: ${GreyLight};
+    background-color: ${GreyLight};
   }
   ::-webkit-scrollbar-thumb {
-    background: ${Nobel};
+    background-color: ${Nobel};
     border-radius: 120px;
   }
 `;
@@ -84,13 +84,13 @@ export const RightRow = styled.div<RightRowProps>`
   height: 100vh;
   overflow-y: auto;
   overflow-x: auto;
-  background: ${props => props.background};
+  background-color: ${props => props.background};
   nav {
     @media (max-width: ${breakPoint}px) {
       position: fixed;
       overflow-y: auto;
       z-index: 1;
-      background: ${props => props.background};
+      background-color: ${props => props.background};
     }
   }
   ${Reset}
