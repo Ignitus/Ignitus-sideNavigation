@@ -32,10 +32,11 @@ const maxWidthQuery = `@media (max-width: ${breakPoint}px)`;
 
 export const Row = styled.div`
   display: flex;
-  flex: 1;
+  width: 50%;
   align-items: center;
   padding-right: 3rem;
   ${maxWidthQuery} {
+    width: 100%;
     flex-direction: column;
     flex-wrap: wrap;
     align-items: flex-start;

@@ -20,7 +20,6 @@ export const Docs: React.FC<DocsProps> = ({ theme, updateTheme }) => (
     <MediumHeading>{'<SideNavigation />'}</MediumHeading>
 
     <Table>
-      {/* <tbody> */}
       <Row>
         <Column glow>Background :</Column>
         <Column>
@@ -79,7 +78,7 @@ export const Docs: React.FC<DocsProps> = ({ theme, updateTheme }) => (
       </Row>
       <br />
       <Row>
-        <Column glow>Hover background :</Column>
+        <Column glow>Hover Text background :</Column>
         <Column>
           <Input
             type="text"
@@ -146,7 +145,26 @@ export const Docs: React.FC<DocsProps> = ({ theme, updateTheme }) => (
           />
         </Column>
       </Row>
-      {/* </tbody> */}
+      <br />
+      <Row>
+        <Column glow>Arrow Icon color :</Column>
+        <Column>
+          <Input
+            type="text"
+            placeholder="#000"
+            value={theme.theme.arrowIconColor}
+            onChange={e => {
+              updateTheme({
+                ...theme,
+                theme: {
+                  ...theme.theme,
+                  arrowIconColor: e.target.value,
+                },
+              });
+            }}
+          />
+        </Column>
+      </Row>
     </Table>
   </React.Fragment>
 );
