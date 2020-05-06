@@ -46,12 +46,10 @@ export const SideNavigation: React.FC<SideNavigationProps> = ({
             <Link to={heading.route}>{heading.title}</Link>
             <RightArrow isExpanded={isExpanded} onClick={() => toggleExpansion(!isExpanded)} />
           </NavigationHeading>
-          {isExpanded && (
-            <NavigationLayersContainer>
-              <Divider />
-              <NavigationLayers navItems={navItems} level={0} />
-            </NavigationLayersContainer>
-          )}
+          <NavigationLayersContainer isExpanded={isExpanded}>
+            <Divider />
+            <NavigationLayers navItems={navItems} level={0} />
+          </NavigationLayersContainer>
         </NavigationContainer>
       </RightRow>
     </ThemeWrapper.Provider>

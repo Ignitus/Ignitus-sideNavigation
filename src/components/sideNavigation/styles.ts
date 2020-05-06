@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import isPropValid from '@emotion/is-prop-valid';
 
-import { breakPoint, flexibleRowDiv } from '../../styles';
+import { breakPoint, flexibleRowDiv, maximumWidthQuery, minimumWidthQuery } from '../../styles';
 import { Arrow as A } from '../Arrow';
 import { Grey } from '../../helpers/colors';
 import { ArrowProps, navbarTheme, SubNestingProps } from './types';
@@ -15,19 +15,25 @@ export const NavigationContainer = styled.nav`
 `;
 
 export const NavigationLayersContainer = styled.div`
-  @media (max-width: ${breakPoint}px) {
+  display: ${(props: { isExpanded: boolean }) => (props.isExpanded ? 'block' : 'none')};
+  ${maximumWidthQuery[3]} {
     height: 100vh;
+  }
+  ${minimumWidthQuery[3]} {
+    display: block;
   }
 `;
 
 export const RightArrow = styled(A, { shouldForwardProp: isPropValid })<ArrowProps>`
   height: 2rem;
   margin-left: auto;
+  display: none;
   margin-right: 2rem;
   transform: ${props => (props.isExpanded ? 'rotate(90deg)' : 'rotate(0deg)')};
   transition: transform 200ms ease-in-out;
-  @media (min-width: ${breakPoint + 1}px) {
-    display: none;
+
+  ${maximumWidthQuery[3]} {
+    display: block;
   }
 `;
 
@@ -51,7 +57,7 @@ export const NavigationHeading = styled.h1<{ theme?: navbarTheme }>`
 `;
 
 export const Divider = styled.hr`
-  opacity: 0.2;
+  opacity: 0.5;
   margin: ${margin} 0;
 `;
 
