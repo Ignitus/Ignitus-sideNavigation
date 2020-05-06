@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "parcel dev/index.html --open -p 3000 -d dev/dist",
     "build": "tsc",
-    "test": "jest --watch",
+    "test": "jest",
     "lint": "eslint src/**/*.{ts,tsx} --cache",
     "ci": "npm run build && npm run lint && npm run test",
     "lint:fix": "eslint src/**/*.{ts,tsx} --fix"
