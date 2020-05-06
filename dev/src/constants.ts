@@ -80,7 +80,7 @@ export const navItems: navItem[] = [
     ],
   },
   {
-    title: 'Atoms',
+    title: 'Enhanced Atoms',
     children: [
       {
         title: 'Color Palette',
@@ -115,19 +115,6 @@ export const navItems: navItem[] = [
             ],
           },
         ],
-      },
-    ],
-  },
-  {
-    title: 'Molecules',
-    children: [
-      {
-        title: 'Overlay',
-        route: '/overlay',
-      },
-      {
-        title: 'Banners',
-        route: '/interface/banner',
       },
     ],
   },
