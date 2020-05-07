@@ -83,15 +83,15 @@ export const Docs: React.FC<DocsProps> = ({ theme, updateTheme }) => (
           <Input
             type="text"
             placeholder="#000"
-            value={theme.theme.hover.navItemBackground}
+            value={theme.theme.navItemBackground}
             onChange={e => {
               updateTheme({
                 ...theme,
                 theme: {
                   ...theme.theme,
+                  navItemBackground: e.target.value,
                   hover: {
                     ...theme.theme.hover,
-                    navItemBackground: e.target.value,
                   },
                 },
               });

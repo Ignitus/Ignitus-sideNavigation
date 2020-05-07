@@ -8,9 +8,9 @@ export const defaultTheme: ThemeWrapperProps = {
     headingColor: DarkBlue,
     textColor: Grey,
     arrowIconColor: Grey,
+    navItemBackground: DarkBlue,
     hover: {
       headingColor: Grey,
-      navItemBackground: DarkBlue,
       navItemTextColor: White,
     },
   },

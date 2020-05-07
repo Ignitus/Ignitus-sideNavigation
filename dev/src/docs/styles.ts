@@ -26,11 +26,6 @@ export const Input = styled.input`
 export const Table = styled.div`
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
-
-  /* ${maximumWidthQuery[3]} {
-    flex-direction: column;
-  } */
 `;
 
 export const Row = styled.div`
