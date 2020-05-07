@@ -58,18 +58,18 @@ export const Docs: React.FC<DocsProps> = ({ theme, updateTheme }) => (
       </Row>
       <br />
       <Row>
-        <Column glow>Heading color :</Column>
+        <Column glow>Home Link Color :</Column>
         <Column>
           <Input
             type="text"
             placeholder="#000"
-            value={theme.theme.headingColor}
+            value={theme.theme.homeLinkColor}
             onChange={e => {
               updateTheme({
                 ...theme,
                 theme: {
                   ...theme.theme,
-                  headingColor: e.target.value,
+                  homeLinkColor: e.target.value,
                 },
               });
             }}

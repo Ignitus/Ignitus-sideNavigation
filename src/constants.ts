@@ -5,7 +5,7 @@ import { ThemeWrapperProps } from './components/sideNavigation/component';
 export const defaultTheme: ThemeWrapperProps = {
   navBackground: WhiteLilac,
   theme: {
-    headingColor: DarkBlue,
+    homeLinkColor: DarkBlue,
     listItemHeadingColor: Grey,
     arrowIconColor: Grey,
     navItemBackground: DarkBlue,

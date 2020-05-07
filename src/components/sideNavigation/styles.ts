@@ -49,7 +49,7 @@ export const NavigationHeading = styled.h1<{ theme?: navbarTheme }>`
   flex-direction: row;
   a {
     text-decoration: none;
-    color: ${props => (props.theme ? props.theme.headingColor : Grey)};
+    color: ${props => (props.theme ? props.theme.homeLinkColor : Grey)};
     &:hover {
       color: ${props => (props.theme && props.theme.hover ? props.theme.hover.headingColor : '')};
     }
