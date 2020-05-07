@@ -24,7 +24,7 @@ test('NavigationHeading color & hover color', () => {
 test('Arrow Icon color for Headings', () => {
   const tree = renderer.create(<Arrow theme={defaultTheme.theme} isExpanded />).toJSON();
 
-  expect(tree).toHaveStyleRule('fill', defaultTheme.theme.hover.navItemBackground);
+  expect(tree).toHaveStyleRule('fill', defaultTheme.theme.hover.subListItemTextColor);
 });
 
 test('Arrow Icon color for SubHeadings', () => {
@@ -36,7 +36,7 @@ test('Arrow Icon color for SubHeadings', () => {
 test('Nav Items Heading color', () => {
   const tree = renderer.create(<Heading theme={defaultTheme.theme}>Heading</Heading>).toJSON();
 
-  expect(tree).toHaveStyleRule('color', defaultTheme.theme.hover.navItemBackground);
+  expect(tree).toHaveStyleRule('color', defaultTheme.theme.hover.subListItemTextColor);
 });
 
 test('Nav Items Sub Heading color', () => {
@@ -54,7 +54,7 @@ test('Nav Items Sub Heading color', () => {
 test('ListItem background color on hover', () => {
   const tree = renderer.create(<ListItem theme={defaultTheme.theme}>Item</ListItem>).toJSON();
 
-  expect(tree).toHaveStyleRule('background-color', defaultTheme.theme.hover.navItemBackground, { target: ':hover' });
+  expect(tree).toHaveStyleRule('background-color', defaultTheme.theme.hover.subListItemTextColor, { target: ':hover' });
 });
 
 test('ListItem text color on hover', () => {

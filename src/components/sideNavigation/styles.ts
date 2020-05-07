@@ -39,7 +39,7 @@ export const RightArrow = styled(A, { shouldForwardProp: isPropValid })<ArrowPro
 
 export const Arrow = styled(A, { shouldForwardProp: isPropValid })<ArrowProps>`
   height: ${props => (props.nesting ? '1.5rem' : '2rem')};
-  fill: ${props => (props.nesting ? props.theme.arrowIconColor : props.theme.hover.navItemBackground)};
+  fill: ${props => (props.nesting ? props.theme.arrowIconColor : props.theme.hover.subListItemTextColor)};
   transform: ${props => (props.isExpanded ? 'rotate(90deg)' : 'rotate(0deg)')};
   transition: transform 200ms ease-in-out;
 `;
@@ -63,7 +63,7 @@ export const Divider = styled.hr`
 
 export const Heading = styled.h5<SubNestingProps>`
   font-size: ${props => (props.nesting ? SM : XL)};
-  color: ${props => (props.nesting ? props.theme.navItemBackground : props.theme.listItemHeadingColor)};
+  color: ${props => (props.nesting ? props.theme.subListItemTextColor : props.theme.listItemHeadingColor)};
   font-weight: ${props => (props.nesting ? Bold : Medium)};
   padding: ${props => (props.nesting ? '0.5rem' : '0')};
   margin: 0;
@@ -76,18 +76,19 @@ export const UnorderedList = styled.ul<ArrowProps>`
   margin: 0;
   a {
     text-decoration: none;
-    color: ${props => props.theme.navItemBackground  };
+    color: ${props => props.theme.subListItemTextColor  };
   }
 `;
 
 export const ListItem = styled.li<SubNestingProps>`
   padding: 0.5rem;
   margin-left: ${props => (props.level ? `${props.level / 3}rem` : '0rem')};
+  color: ${props => props.theme.subListItemTextColor};
   cursor: pointer;
-  &:hover {
-    background-color: ${props => props.theme.hover.navItemBackground};
+  /* &:hover {
+    background-color: ${props => props.theme.subListItemTextColor};
     color: ${props => props.theme.hover.navItemTextColor};
-  }
+  } */
 `;
 
 export const HeadingArrowContainer = styled(flexibleRowDiv)<SubNestingProps>`

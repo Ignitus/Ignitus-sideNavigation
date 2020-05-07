@@ -8,7 +8,7 @@ export const defaultTheme: ThemeWrapperProps = {
     homeLinkColor: DarkBlue,
     listItemHeadingColor: Grey,
     arrowIconColor: Grey,
-    navItemBackground: DarkBlue,
+    subListItemTextColor: DarkBlue,
     hover: {
       headingColor: Grey,
       navItemTextColor: White,

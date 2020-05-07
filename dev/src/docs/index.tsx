@@ -78,18 +78,18 @@ export const Docs: React.FC<DocsProps> = ({ theme, updateTheme }) => (
       </Row>
       <br />
       <Row>
-        <Column glow>Hover Text background :</Column>
+        <Column glow>Sub List Item Text :</Column>
         <Column>
           <Input
             type="text"
             placeholder="#000"
-            value={theme.theme.navItemBackground}
+            value={theme.theme.subListItemTextColor}
             onChange={e => {
               updateTheme({
                 ...theme,
                 theme: {
                   ...theme.theme,
-                  navItemBackground: e.target.value,
+                  subListItemTextColor: e.target.value,
                   hover: {
                     ...theme.theme.hover,
                   },
