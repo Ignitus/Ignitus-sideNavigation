@@ -63,7 +63,7 @@ export const Divider = styled.hr`
 
 export const Heading = styled.h5<SubNestingProps>`
   font-size: ${props => (props.nesting ? SM : XL)};
-  color: ${props => (props.nesting ? props.theme.textColor : props.theme.navItemBackground)};
+  color: ${props => (props.nesting ? props.theme.navItemBackground : props.theme.listItemHeadingColor)};
   font-weight: ${props => (props.nesting ? Bold : Medium)};
   padding: ${props => (props.nesting ? '0.5rem' : '0')};
   margin: 0;
@@ -76,7 +76,7 @@ export const UnorderedList = styled.ul<ArrowProps>`
   margin: 0;
   a {
     text-decoration: none;
-    color: ${props => props.theme.textColor};
+    color: ${props => props.theme.navItemBackground  };
   }
 `;
 

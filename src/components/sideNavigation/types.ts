@@ -1,5 +1,5 @@
 export type navbarTheme = {
-  textColor: string;
+  listItemHeadingColor: string;
   headingColor: string;
   arrowIconColor: string;
   navItemBackground: string;

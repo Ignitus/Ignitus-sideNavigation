@@ -48,7 +48,7 @@ test('Nav Items Sub Heading color', () => {
     )
     .toJSON();
 
-  expect(tree).toHaveStyleRule('color', defaultTheme.theme.textColor);
+  expect(tree).toHaveStyleRule('color', defaultTheme.theme.listItemHeadingColor);
 });
 
 test('ListItem background color on hover', () => {

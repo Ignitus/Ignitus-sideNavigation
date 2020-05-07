@@ -14,11 +14,11 @@ const mockColors = ['#000', '#fff', 'red', 'yellow', 'blue', 'green', 'grey'];
 const theme: ThemeWrapperProps = {
   navBackground: mockColors[0],
   theme: {
-    textColor: mockColors[1],
+    listItemHeadingColor: mockColors[1],
     headingColor: mockColors[2],
     arrowIconColor: mockColors[6],
+    navItemBackground: mockColors[3],
     hover: {
-      navItemBackground: mockColors[3],
       headingColor: mockColors[4],
       navItemTextColor: mockColors[5],
     },

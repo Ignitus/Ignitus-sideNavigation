@@ -21,7 +21,7 @@ export const Docs: React.FC<DocsProps> = ({ theme, updateTheme }) => (
 
     <Table>
       <Row>
-        <Column glow>Background :</Column>
+        <Column glow>Background Color :</Column>
         <Column>
           <Input
             type="text"
@@ -38,18 +38,18 @@ export const Docs: React.FC<DocsProps> = ({ theme, updateTheme }) => (
       </Row>
       <br />
       <Row>
-        <Column glow>Text color :</Column>
+        <Column glow>List Item Heading Color:</Column>
         <Column>
           <Input
             type="text"
             placeholder="#000"
-            value={theme.theme.textColor}
+            value={theme.theme.listItemHeadingColor}
             onChange={e => {
               updateTheme({
                 ...theme,
                 theme: {
                   ...theme.theme,
-                  textColor: e.target.value,
+                  listItemHeadingColor: e.target.value,
                 },
               });
             }}
