@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { ExtensionProps, LayersProps, NavigationLayerProps, SideNavigationProps, navbarTheme } from '../types';
@@ -37,6 +37,13 @@ export const SideNavigation: React.FC<SideNavigationProps> = ({
 }) => {
   // TO MAKE NAVIGATION OPEN ON (SCREENS > breakPoint) on initial render
   const [isExpanded, toggleExpansion] = useState(window.innerWidth > breakPoint);
+
+  const updateToggleExpansion = (): void => toggleExpansion(window.innerWidth > breakPoint);
+
+  useEffect(() => {
+    window.addEventListener('resize', updateToggleExpansion);
+    return (): void => window.removeEventListener('resize', updateToggleExpansion);
+  });
 
   return (
     <ThemeWrapper.Provider value={{ navBackground, theme }}>
