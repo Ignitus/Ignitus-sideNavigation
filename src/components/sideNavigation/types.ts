@@ -4,7 +4,7 @@ export type navbarTheme = {
   listItemHeadingArrowColor: string;
   subListItemTextColor: string;
   subListItemHeadingColor: string;
-  subListItemArrowColor: string;
+  subListItemHeadingArrowColor: string;
 
   hover: {
     subListItemColorOnHover: string;

@@ -144,18 +144,18 @@ export const Docs: React.FC<DocsProps> = ({ theme, updateTheme }) => (
       </Row>
       <br />
       <Row>
-        <Column glow>Sub List Item Arrow Color :</Column>
+        <Column glow>Sub List Item Heading Arrow Color :</Column>
         <Column>
           <Input
             type="text"
             placeholder="#fff"
-            value={theme.theme.subListItemArrowColor}
+            value={theme.theme.subListItemHeadingArrowColor}
             onChange={e => {
               updateTheme({
                 ...theme,
                 theme: {
                   ...theme.theme,
-                  subListItemArrowColor: e.target.value,
+                  subListItemHeadingArrowColor: e.target.value,
                   hover: {
                     ...theme.theme.hover,
                   },

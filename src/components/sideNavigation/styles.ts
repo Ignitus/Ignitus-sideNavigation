@@ -5,7 +5,7 @@ import { flexibleRowDiv, maximumWidthQuery, minimumWidthQuery } from '../../styl
 import { Arrow as A } from '../Arrow';
 import { Grey, GreyLight, DarkBlue, White } from '../../helpers/colors';
 import { ArrowProps, navbarTheme, SubNestingProps } from './types';
-import { SM, XL, Bold, Medium, Normal } from '../../helpers/fonts';
+import { SM, XL, Medium, Normal } from '../../helpers/fonts';
 
 const margin = '1rem';
 
@@ -39,7 +39,7 @@ export const RightArrow = styled(A, { shouldForwardProp: isPropValid })<ArrowPro
 
 export const Arrow = styled(A, { shouldForwardProp: isPropValid })<ArrowProps>`
   height: ${props => (props.nesting ? '1.5rem' : '2rem')};
-  fill: ${props => (props.nesting ? props.theme.subListItemArrowColor : props.theme.listItemHeadingArrowColor)};
+  fill: ${props => (props.nesting ? props.theme.subListItemHeadingArrowColor : props.theme.listItemHeadingArrowColor)};
   transform: ${props => (props.isExpanded ? 'rotate(90deg)' : 'rotate(0deg)')};
   transition: transform 200ms ease-in-out;
 `;
@@ -51,7 +51,8 @@ export const NavigationHeading = styled.h1<{ theme?: navbarTheme }>`
     text-decoration: none;
     color: ${props => (props.theme ? props.theme.homeLinkColor : Grey)};
     &:hover {
-      color: ${props => (props.theme && props.theme.hover ? props.theme.hover.subListItemBackgroundOnHover : GreyLight)};
+      color: ${props =>
+        props.theme && props.theme.hover ? props.theme.hover.subListItemBackgroundOnHover : GreyLight};
     }
   }
 `;
@@ -87,13 +88,8 @@ export const ListItem = styled.li<SubNestingProps>`
   cursor: pointer;
   &:hover {
     background-color: ${props =>
-      props.theme && props.theme.hover
-        ? props.theme.hover.subListItemBackgroundOnHover
-        : DarkBlue};
-   color: ${props =>
-      props.theme && props.theme.hover
-        ? props.theme.hover.subListItemColorOnHover
-        : White};
+      props.theme && props.theme.hover ? props.theme.hover.subListItemBackgroundOnHover : DarkBlue};
+    color: ${props => (props.theme && props.theme.hover ? props.theme.hover.subListItemColorOnHover : White)};
   }
 `;
 

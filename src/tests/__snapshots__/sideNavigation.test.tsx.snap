@@ -45,7 +45,7 @@ exports[`<SideNavigation /> should render 1`] = `
 
 .emotion-15 {
   width: 100%;
-  padding-left: 2rem;
+  padding: 0 1rem;
 }
 
 .emotion-1 {
@@ -61,16 +61,17 @@ exports[`<SideNavigation /> should render 1`] = `
 .emotion-1 a {
   -webkit-text-decoration: none;
   text-decoration: none;
-  color: #000066;
+  color: #000;
 }
 
 .emotion-1 a:hover {
-  color: #2D2D2D;
+  color: #000066;
 }
 
 .emotion-0 {
   height: 2rem;
   margin-left: auto;
+  display: none;
   margin-right: 2rem;
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
@@ -80,10 +81,14 @@ exports[`<SideNavigation /> should render 1`] = `
   transition: transform 200ms ease-in-out;
 }
 
-@media (min-width:769px) {
+@media (max-width:768px) {
   .emotion-0 {
-    display: none;
+    display: block;
   }
+}
+
+.emotion-14 {
+  display: block;
 }
 
 @media (max-width:768px) {
@@ -92,14 +97,21 @@ exports[`<SideNavigation /> should render 1`] = `
   }
 }
 
+@media (min-width:768px) {
+  .emotion-14 {
+    display: block;
+  }
+}
+
 .emotion-2 {
-  opacity: 0.2;
+  opacity: 0.5;
   margin: 1rem 0;
 }
 
 .emotion-3 {
   padding: 0.5rem;
   margin-left: 0rem;
+  color: #000;
   cursor: pointer;
 }
 
@@ -127,10 +139,10 @@ exports[`<SideNavigation /> should render 1`] = `
   margin-top: 1rem;
   margin-bottom: 0.5rem;
   margin-left: 0rem;
-  -webkit-box-pack: unset;
-  -webkit-justify-content: unset;
-  -ms-flex-pack: unset;
-  justify-content: unset;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -167,12 +179,13 @@ exports[`<SideNavigation /> should render 1`] = `
 .emotion-13 a {
   -webkit-text-decoration: none;
   text-decoration: none;
-  color: #2D2D2D;
+  color: #000;
 }
 
 .emotion-7 {
   padding: 0.5rem;
   margin-left: 0.3333333333333333rem;
+  color: #000;
   cursor: pointer;
 }
 
@@ -200,10 +213,10 @@ exports[`<SideNavigation /> should render 1`] = `
   margin-top: 0;
   margin-bottom: 0;
   margin-left: 0.3333333333333333rem;
-  -webkit-box-pack: unset;
-  -webkit-justify-content: unset;
-  -ms-flex-pack: unset;
-  justify-content: unset;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -213,15 +226,15 @@ exports[`<SideNavigation /> should render 1`] = `
 
 .emotion-8 {
   font-size: 16px;
-  color: #2D2D2D;
-  font-weight: 700;
+  color: #000;
+  font-weight: 400;
   padding: 0.5rem;
   margin: 0;
 }
 
 .emotion-9 {
   height: 1.5rem;
-  fill: #2D2D2D;
+  fill: #ff0000;
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
@@ -240,12 +253,13 @@ exports[`<SideNavigation /> should render 1`] = `
 .emotion-12 a {
   -webkit-text-decoration: none;
   text-decoration: none;
-  color: #2D2D2D;
+  color: #000;
 }
 
 .emotion-11 {
   padding: 0.5rem;
   margin-left: 0.6666666666666666rem;
+  color: #000;
   cursor: pointer;
 }
 
@@ -434,12 +448,33 @@ exports[`<SideNavigation /> should render with theme 1`] = `
 
 .emotion-15 {
   width: 100%;
-  padding-left: 2rem;
+  padding: 0 1rem;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.emotion-1 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #000;
+}
+
+.emotion-1 a:hover {
+  color: #000066;
 }
 
 .emotion-0 {
   height: 2rem;
   margin-left: auto;
+  display: none;
   margin-right: 2rem;
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
@@ -449,10 +484,14 @@ exports[`<SideNavigation /> should render with theme 1`] = `
   transition: transform 200ms ease-in-out;
 }
 
-@media (min-width:769px) {
+@media (max-width:768px) {
   .emotion-0 {
-    display: none;
+    display: block;
   }
+}
+
+.emotion-14 {
+  display: block;
 }
 
 @media (max-width:768px) {
@@ -461,8 +500,14 @@ exports[`<SideNavigation /> should render with theme 1`] = `
   }
 }
 
+@media (min-width:768px) {
+  .emotion-14 {
+    display: block;
+  }
+}
+
 .emotion-2 {
-  opacity: 0.2;
+  opacity: 0.5;
   margin: 1rem 0;
 }
 
@@ -485,15 +530,47 @@ exports[`<SideNavigation /> should render with theme 1`] = `
   margin-top: 1rem;
   margin-bottom: 0.5rem;
   margin-left: 0rem;
-  -webkit-box-pack: unset;
-  -webkit-justify-content: unset;
-  -ms-flex-pack: unset;
-  justify-content: unset;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   cursor: pointer;
+}
+
+.emotion-4 {
+  font-size: 22px;
+  color: #000066;
+  font-weight: 500;
+  padding: 0;
+  margin: 0;
+}
+
+.emotion-5 {
+  height: 2rem;
+  fill: #000066;
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  -webkit-transition: -webkit-transform 200ms ease-in-out;
+  -webkit-transition: transform 200ms ease-in-out;
+  transition: transform 200ms ease-in-out;
+}
+
+.emotion-13 {
+  list-style: none;
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+.emotion-13 a {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #000;
 }
 
 .emotion-10 {
@@ -515,10 +592,10 @@ exports[`<SideNavigation /> should render with theme 1`] = `
   margin-top: 0;
   margin-bottom: 0;
   margin-left: 0.3333333333333333rem;
-  -webkit-box-pack: unset;
-  -webkit-justify-content: unset;
-  -ms-flex-pack: unset;
-  justify-content: unset;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -526,91 +603,17 @@ exports[`<SideNavigation /> should render with theme 1`] = `
   cursor: pointer;
 }
 
-.emotion-1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-}
-
-.emotion-1 a {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  color: red;
-}
-
-.emotion-1 a:hover {
-  color: blue;
-}
-
-.emotion-3 {
-  padding: 0.5rem;
-  margin-left: 0rem;
-  cursor: pointer;
-}
-
-.emotion-3:hover {
-  background-color: yellow;
-  color: green;
-}
-
-.emotion-4 {
-  font-size: 22px;
-  color: yellow;
-  font-weight: 500;
-  padding: 0;
-  margin: 0;
-}
-
-.emotion-5 {
-  height: 2rem;
-  fill: yellow;
-  -webkit-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
-  -webkit-transition: -webkit-transform 200ms ease-in-out;
-  -webkit-transition: transform 200ms ease-in-out;
-  transition: transform 200ms ease-in-out;
-}
-
-.emotion-13 {
-  list-style: none;
-  display: block;
-  padding: 0;
-  margin: 0;
-}
-
-.emotion-13 a {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  color: #fff;
-}
-
-.emotion-7 {
-  padding: 0.5rem;
-  margin-left: 0.3333333333333333rem;
-  cursor: pointer;
-}
-
-.emotion-7:hover {
-  background-color: yellow;
-  color: green;
-}
-
 .emotion-8 {
   font-size: 16px;
-  color: #fff;
-  font-weight: 700;
+  color: #000;
+  font-weight: 400;
   padding: 0.5rem;
   margin: 0;
 }
 
 .emotion-9 {
   height: 1.5rem;
-  fill: grey;
+  fill: #ff0000;
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
@@ -629,18 +632,43 @@ exports[`<SideNavigation /> should render with theme 1`] = `
 .emotion-12 a {
   -webkit-text-decoration: none;
   text-decoration: none;
+  color: #000;
+}
+
+.emotion-3 {
+  padding: 0.5rem;
+  margin-left: 0rem;
+  color: #000;
+  cursor: pointer;
+}
+
+.emotion-3:hover {
+  background-color: #000066;
+  color: #fff;
+}
+
+.emotion-7 {
+  padding: 0.5rem;
+  margin-left: 0.3333333333333333rem;
+  color: #000;
+  cursor: pointer;
+}
+
+.emotion-7:hover {
+  background-color: #000066;
   color: #fff;
 }
 
 .emotion-11 {
   padding: 0.5rem;
   margin-left: 0.6666666666666666rem;
+  color: #000;
   cursor: pointer;
 }
 
 .emotion-11:hover {
-  background-color: yellow;
-  color: green;
+  background-color: #000066;
+  color: #fff;
 }
 
 <div
