@@ -5,13 +5,13 @@ import { flexibleRowDiv, maximumWidthQuery, minimumWidthQuery } from '../../styl
 import { Arrow as A } from '../Arrow';
 import { Grey, GreyLight, DarkBlue, White } from '../../helpers/colors';
 import { ArrowProps, navbarTheme, SubNestingProps } from './types';
-import { SM, XL, Bold, Medium } from '../../helpers/fonts';
+import { SM, XL, Bold, Medium, Normal } from '../../helpers/fonts';
 
 const margin = '1rem';
 
 export const NavigationContainer = styled.nav`
   width: 100%;
-  padding-left: 2rem;
+  padding: 0 1rem;
 `;
 
 export const NavigationLayersContainer = styled.div`
@@ -64,7 +64,7 @@ export const Divider = styled.hr`
 export const Heading = styled.h5<SubNestingProps>`
   font-size: ${props => (props.nesting ? SM : XL)};
   color: ${props => (props.nesting ? props.theme.subListItemHeadingColor : props.theme.listItemHeadingColor)};
-  font-weight: ${props => (props.nesting ? Bold : Medium)};
+  font-weight: ${props => (props.nesting ? Normal : Medium)};
   padding: ${props => (props.nesting ? '0.5rem' : '0')};
   margin: 0;
 `;
@@ -101,7 +101,7 @@ export const HeadingArrowContainer = styled(flexibleRowDiv)<SubNestingProps>`
   margin-top: ${props => (props.nesting ? '0' : '1rem')};
   margin-bottom: ${props => (props.nesting ? '0' : '0.5rem')};
   margin-left: ${props => (props.level ? `${props.level / 3}rem` : '0rem')};
-  justify-content: unset;
+  justify-content: space-between;
   align-items: center;
   cursor: pointer;
 `;
