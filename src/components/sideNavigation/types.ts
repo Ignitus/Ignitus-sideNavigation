@@ -3,6 +3,7 @@ export type navbarTheme = {
   homeLinkColor: string;
   arrowIconColor: string;
   subListItemTextColor: string;
+  subListItemHeadingColor: string;
   hover: {
     navItemTextColor: string;
     headingColor: string;

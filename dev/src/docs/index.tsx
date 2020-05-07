@@ -78,7 +78,7 @@ export const Docs: React.FC<DocsProps> = ({ theme, updateTheme }) => (
       </Row>
       <br />
       <Row>
-        <Column glow>Sub List Item Text :</Column>
+        <Column glow>Sub List Item Text Color :</Column>
         <Column>
           <Input
             type="text"
@@ -90,6 +90,29 @@ export const Docs: React.FC<DocsProps> = ({ theme, updateTheme }) => (
                 theme: {
                   ...theme.theme,
                   subListItemTextColor: e.target.value,
+                  hover: {
+                    ...theme.theme.hover,
+                  },
+                },
+              });
+            }}
+          />
+        </Column>
+      </Row>
+      <br />
+      <Row>
+        <Column glow>Sub List Item Heading Color :</Column>
+        <Column>
+          <Input
+            type="text"
+            placeholder="#fff"
+            value={theme.theme.subListItemHeadingColor}
+            onChange={e => {
+              updateTheme({
+                ...theme,
+                theme: {
+                  ...theme.theme,
+                  subListItemHeadingColor: e.target.value,
                   hover: {
                     ...theme.theme.hover,
                   },
