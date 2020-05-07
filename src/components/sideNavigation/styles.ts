@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
 import isPropValid from '@emotion/is-prop-valid';
 
-import { breakPoint, flexibleRowDiv, maximumWidthQuery, minimumWidthQuery } from '../../styles';
+import { flexibleRowDiv, maximumWidthQuery, minimumWidthQuery } from '../../styles';
 import { Arrow as A } from '../Arrow';
-import { Grey } from '../../helpers/colors';
+import { Grey, GreyLight, DarkBlue, White } from '../../helpers/colors';
 import { ArrowProps, navbarTheme, SubNestingProps } from './types';
 import { SM, XL, Bold, Medium } from '../../helpers/fonts';
 
@@ -39,7 +39,7 @@ export const RightArrow = styled(A, { shouldForwardProp: isPropValid })<ArrowPro
 
 export const Arrow = styled(A, { shouldForwardProp: isPropValid })<ArrowProps>`
   height: ${props => (props.nesting ? '1.5rem' : '2rem')};
-  fill: ${props => (props.nesting ? 'red' : 'yellow')};
+  fill: ${props => (props.nesting ? props.theme.subListItemArrowColor : props.theme.listItemHeadingArrowColor)};
   transform: ${props => (props.isExpanded ? 'rotate(90deg)' : 'rotate(0deg)')};
   transition: transform 200ms ease-in-out;
 `;
@@ -51,7 +51,7 @@ export const NavigationHeading = styled.h1<{ theme?: navbarTheme }>`
     text-decoration: none;
     color: ${props => (props.theme ? props.theme.homeLinkColor : Grey)};
     &:hover {
-      color: ${props => (props.theme && props.theme.hover ? props.theme.hover.headingColor : '')};
+      color: ${props => (props.theme && props.theme.hover ? props.theme.hover.subListItemBackgroundOnHover : GreyLight)};
     }
   }
 `;
@@ -76,7 +76,7 @@ export const UnorderedList = styled.ul<ArrowProps>`
   margin: 0;
   a {
     text-decoration: none;
-    color: ${props => props.theme.subListItemTextColor  };
+    color: ${props => props.theme.subListItemTextColor};
   }
 `;
 
@@ -85,10 +85,16 @@ export const ListItem = styled.li<SubNestingProps>`
   margin-left: ${props => (props.level ? `${props.level / 3}rem` : '0rem')};
   color: ${props => props.theme.subListItemTextColor};
   cursor: pointer;
-  /* &:hover {
-    background-color: ${props => props.theme.subListItemTextColor};
-    color: ${props => props.theme.hover.navItemTextColor};
-  } */
+  &:hover {
+    background-color: ${props =>
+      props.theme && props.theme.hover
+        ? props.theme.hover.subListItemBackgroundOnHover
+        : DarkBlue};
+   color: ${props =>
+      props.theme && props.theme.hover
+        ? props.theme.hover.subListItemColorOnHover
+        : White};
+  }
 `;
 
 export const HeadingArrowContainer = styled(flexibleRowDiv)<SubNestingProps>`

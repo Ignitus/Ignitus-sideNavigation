@@ -1,4 +1,4 @@
-import { DarkBlue, Black, Grey, White, WhiteLilac } from './helpers/colors';
+import { DarkBlue, Black, Grey, White, WhiteLilac, Red } from './helpers/colors';
 import { ThemeWrapperProps } from './components/sideNavigation/component';
 
 export const defaultTheme: ThemeWrapperProps = {
@@ -6,12 +6,13 @@ export const defaultTheme: ThemeWrapperProps = {
   theme: {
     homeLinkColor: Black,
     listItemHeadingColor: DarkBlue,
-    arrowIconColor: Grey,
+    listItemHeadingArrowColor: DarkBlue,
     subListItemTextColor: Black,
     subListItemHeadingColor: Black,
+    subListItemArrowColor: Red,
     hover: {
-      headingColor: Grey,
-      navItemTextColor: White,
+      subListItemBackgroundOnHover: DarkBlue,
+      subListItemColorOnHover: White,
     },
   },
 };

@@ -1,12 +1,14 @@
 export type navbarTheme = {
   listItemHeadingColor: string;
   homeLinkColor: string;
-  arrowIconColor: string;
+  listItemHeadingArrowColor: string;
   subListItemTextColor: string;
   subListItemHeadingColor: string;
+  subListItemArrowColor: string;
+
   hover: {
-    navItemTextColor: string;
-    headingColor: string;
+    subListItemColorOnHover: string;
+    subListItemBackgroundOnHover: string;
   };
 };
 

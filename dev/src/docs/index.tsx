@@ -21,6 +21,26 @@ export const Docs: React.FC<DocsProps> = ({ theme, updateTheme }) => (
 
     <Table>
       <Row>
+        <Column glow>Home Link Color :</Column>
+        <Column>
+          <Input
+            type="text"
+            placeholder="#fff"
+            value={theme.theme.homeLinkColor}
+            onChange={e => {
+              updateTheme({
+                ...theme,
+                theme: {
+                  ...theme.theme,
+                  homeLinkColor: e.target.value,
+                },
+              });
+            }}
+          />
+        </Column>
+      </Row>
+      <br />
+      <Row>
         <Column glow>Background Color :</Column>
         <Column>
           <Input
@@ -58,18 +78,18 @@ export const Docs: React.FC<DocsProps> = ({ theme, updateTheme }) => (
       </Row>
       <br />
       <Row>
-        <Column glow>Home Link Color :</Column>
+        <Column glow>List Item Heading Arrow Color :</Column>
         <Column>
           <Input
             type="text"
             placeholder="#fff"
-            value={theme.theme.homeLinkColor}
+            value={theme.theme.listItemHeadingArrowColor}
             onChange={e => {
               updateTheme({
                 ...theme,
                 theme: {
                   ...theme.theme,
-                  homeLinkColor: e.target.value,
+                  listItemHeadingArrowColor: e.target.value,
                 },
               });
             }}
@@ -124,12 +144,36 @@ export const Docs: React.FC<DocsProps> = ({ theme, updateTheme }) => (
       </Row>
       <br />
       <Row>
-        <Column glow>Hover text color :</Column>
+        <Column glow>Sub List Item Arrow Color :</Column>
         <Column>
           <Input
             type="text"
             placeholder="#fff"
-            value={theme.theme.hover.navItemTextColor}
+            value={theme.theme.subListItemArrowColor}
+            onChange={e => {
+              updateTheme({
+                ...theme,
+                theme: {
+                  ...theme.theme,
+                  subListItemArrowColor: e.target.value,
+                  hover: {
+                    ...theme.theme.hover,
+                  },
+                },
+              });
+            }}
+          />
+        </Column>
+      </Row>
+      <br />
+      <br />
+      <Row>
+        <Column glow>Sub List Item Background on Hover :</Column>
+        <Column>
+          <Input
+            type="text"
+            placeholder="#fff"
+            value={theme.theme.hover.subListItemBackgroundOnHover}
             onChange={e => {
               updateTheme({
                 ...theme,
@@ -137,7 +181,7 @@ export const Docs: React.FC<DocsProps> = ({ theme, updateTheme }) => (
                   ...theme.theme,
                   hover: {
                     ...theme.theme.hover,
-                    navItemTextColor: e.target.value,
+                    subListItemBackgroundOnHover: e.target.value,
                   },
                 },
               });
@@ -147,12 +191,12 @@ export const Docs: React.FC<DocsProps> = ({ theme, updateTheme }) => (
       </Row>
       <br />
       <Row>
-        <Column glow>Hover heading color :</Column>
+        <Column glow>Sub List Item Color On Hover :</Column>
         <Column>
           <Input
             type="text"
             placeholder="#fff"
-            value={theme.theme.hover.headingColor}
+            value={theme.theme.hover.subListItemColorOnHover}
             onChange={e => {
               updateTheme({
                 ...theme,
@@ -160,7 +204,7 @@ export const Docs: React.FC<DocsProps> = ({ theme, updateTheme }) => (
                   ...theme.theme,
                   hover: {
                     ...theme.theme.hover,
-                    headingColor: e.target.value,
+                    subListItemColorOnHover: e.target.value,
                   },
                 },
               });
@@ -169,25 +213,6 @@ export const Docs: React.FC<DocsProps> = ({ theme, updateTheme }) => (
         </Column>
       </Row>
       <br />
-      <Row>
-        <Column glow>Arrow Icon color :</Column>
-        <Column>
-          <Input
-            type="text"
-            placeholder="#fff"
-            value={theme.theme.arrowIconColor}
-            onChange={e => {
-              updateTheme({
-                ...theme,
-                theme: {
-                  ...theme.theme,
-                  arrowIconColor: e.target.value,
-                },
-              });
-            }}
-          />
-        </Column>
-      </Row>
     </Table>
   </React.Fragment>
 );

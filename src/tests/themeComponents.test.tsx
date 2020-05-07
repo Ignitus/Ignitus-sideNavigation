@@ -30,7 +30,7 @@ test('Arrow Icon color for Headings', () => {
 test('Arrow Icon color for SubHeadings', () => {
   const tree = renderer.create(<Arrow theme={defaultTheme.theme} nesting isExpanded />).toJSON();
 
-  expect(tree).toHaveStyleRule('fill', defaultTheme.theme.arrowIconColor);
+  expect(tree).toHaveStyleRule('fill', defaultTheme.theme.listItemHeadingArrowColor);
 });
 
 test('Nav Items Heading color', () => {

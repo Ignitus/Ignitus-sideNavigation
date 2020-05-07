@@ -10,7 +10,7 @@ export const MediumHeading = styled.h3`
 
 export const Glow = css`
   color: ${DarkBlue};
-  margin: 2rem 0;
+  margin: 2rem 0.5rem;
 `;
 
 export const Input = styled.input`

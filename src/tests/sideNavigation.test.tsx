@@ -16,7 +16,7 @@ const theme: ThemeWrapperProps = {
   theme: {
     listItemHeadingColor: mockColors[1],
     headingColor: mockColors[2],
-    arrowIconColor: mockColors[6],
+    listItemHeadingArrowColor: mockColors[6],
     subListItemTextColor: mockColors[3],
     hover: {
       headingColor: mockColors[4],

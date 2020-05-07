@@ -5,3 +5,4 @@ export const DarkBlue: string = '#000066';
 export const White: string = '#ffffff';
 export const WhiteLilac: string = '#fafbfd';
 export const Black: string = '#000';
+export const Red: string = '#ff0000';
