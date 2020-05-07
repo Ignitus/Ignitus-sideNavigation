@@ -39,7 +39,7 @@ export const RightArrow = styled(A, { shouldForwardProp: isPropValid })<ArrowPro
 
 export const Arrow = styled(A, { shouldForwardProp: isPropValid })<ArrowProps>`
   height: ${props => (props.nesting ? '1.5rem' : '2rem')};
-  fill: ${props => (props.nesting ? props.theme.arrowIconColor : props.theme.hover.subListItemTextColor)};
+  fill: ${props => (props.nesting ? 'red' : 'yellow')};
   transform: ${props => (props.isExpanded ? 'rotate(90deg)' : 'rotate(0deg)')};
   transition: transform 200ms ease-in-out;
 `;

@@ -25,7 +25,7 @@ export const Docs: React.FC<DocsProps> = ({ theme, updateTheme }) => (
         <Column>
           <Input
             type="text"
-            placeholder="#000"
+            placeholder="#fff"
             value={theme.navBackground}
             onChange={e => {
               updateTheme({
@@ -42,7 +42,7 @@ export const Docs: React.FC<DocsProps> = ({ theme, updateTheme }) => (
         <Column>
           <Input
             type="text"
-            placeholder="#000"
+            placeholder="#fff"
             value={theme.theme.listItemHeadingColor}
             onChange={e => {
               updateTheme({
@@ -62,7 +62,7 @@ export const Docs: React.FC<DocsProps> = ({ theme, updateTheme }) => (
         <Column>
           <Input
             type="text"
-            placeholder="#000"
+            placeholder="#fff"
             value={theme.theme.homeLinkColor}
             onChange={e => {
               updateTheme({
@@ -82,7 +82,7 @@ export const Docs: React.FC<DocsProps> = ({ theme, updateTheme }) => (
         <Column>
           <Input
             type="text"
-            placeholder="#000"
+            placeholder="#fff"
             value={theme.theme.subListItemTextColor}
             onChange={e => {
               updateTheme({
@@ -105,7 +105,7 @@ export const Docs: React.FC<DocsProps> = ({ theme, updateTheme }) => (
         <Column>
           <Input
             type="text"
-            placeholder="#000"
+            placeholder="#fff"
             value={theme.theme.hover.navItemTextColor}
             onChange={e => {
               updateTheme({
@@ -128,7 +128,7 @@ export const Docs: React.FC<DocsProps> = ({ theme, updateTheme }) => (
         <Column>
           <Input
             type="text"
-            placeholder="#000"
+            placeholder="#fff"
             value={theme.theme.hover.headingColor}
             onChange={e => {
               updateTheme({
@@ -151,7 +151,7 @@ export const Docs: React.FC<DocsProps> = ({ theme, updateTheme }) => (
         <Column>
           <Input
             type="text"
-            placeholder="#000"
+            placeholder="#fff"
             value={theme.theme.arrowIconColor}
             onChange={e => {
               updateTheme({
