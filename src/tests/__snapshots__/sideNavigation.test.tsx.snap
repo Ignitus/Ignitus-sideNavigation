@@ -97,7 +97,7 @@ exports[`<SideNavigation /> should render 1`] = `
   }
 }
 
-@media (min-width:768px) {
+@media (min-width:769px) {
   .emotion-14 {
     display: block;
   }
@@ -500,7 +500,7 @@ exports[`<SideNavigation /> should render with theme 1`] = `
   }
 }
 
-@media (min-width:768px) {
+@media (min-width:769px) {
   .emotion-14 {
     display: block;
   }

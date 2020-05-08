@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import isPropValid from '@emotion/is-prop-valid';
 
-import { flexibleRowDiv, maximumWidthQuery, minimumWidthQuery } from '../../styles';
+import { flexibleRowDiv, maximumWidthQuery } from '../../styles';
 import { Arrow as A } from '../Arrow';
 import { Grey, GreyLight, DarkBlue, White } from '../../helpers/colors';
 import { ArrowProps, navbarTheme, SubNestingProps } from './types';
