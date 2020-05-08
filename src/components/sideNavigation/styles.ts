@@ -19,7 +19,7 @@ export const NavigationLayersContainer = styled.div`
   ${maximumWidthQuery[3]} {
     height: 100vh;
   }
-  ${minimumWidthQuery[3]} {
+  @media (min-width: 769px) {
     display: block;
   }
 `;
