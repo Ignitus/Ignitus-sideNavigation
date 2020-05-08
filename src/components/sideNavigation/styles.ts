@@ -1,39 +1,45 @@
 import styled from '@emotion/styled';
 import isPropValid from '@emotion/is-prop-valid';
 
-import { breakPoint, flexibleRowDiv } from '../../styles';
+import { flexibleRowDiv, maximumWidthQuery } from '../../styles';
 import { Arrow as A } from '../Arrow';
-import { Grey } from '../../helpers/colors';
+import { Grey, GreyLight, DarkBlue, White } from '../../helpers/colors';
 import { ArrowProps, navbarTheme, SubNestingProps } from './types';
-import { SM, XL, Bold, Medium } from '../../helpers/fonts';
+import { SM, XL, Medium, Normal } from '../../helpers/fonts';
 
 const margin = '1rem';
 
 export const NavigationContainer = styled.nav`
   width: 100%;
-  padding-left: 2rem;
+  padding: 0 1rem;
 `;
 
 export const NavigationLayersContainer = styled.div`
-  @media (max-width: ${breakPoint}px) {
+  display: ${(props: { isExpanded: boolean }) => (props.isExpanded ? 'block' : 'none')};
+  ${maximumWidthQuery[3]} {
     height: 100vh;
+  }
+  @media (min-width: 769px) {
+    display: block;
   }
 `;
 
 export const RightArrow = styled(A, { shouldForwardProp: isPropValid })<ArrowProps>`
   height: 2rem;
   margin-left: auto;
+  display: none;
   margin-right: 2rem;
   transform: ${props => (props.isExpanded ? 'rotate(90deg)' : 'rotate(0deg)')};
   transition: transform 200ms ease-in-out;
-  @media (min-width: ${breakPoint + 1}px) {
-    display: none;
+
+  ${maximumWidthQuery[3]} {
+    display: block;
   }
 `;
 
 export const Arrow = styled(A, { shouldForwardProp: isPropValid })<ArrowProps>`
   height: ${props => (props.nesting ? '1.5rem' : '2rem')};
-  fill: ${props => (props.nesting ? props.theme.arrowIconColor : props.theme.hover.navItemBackground)};
+  fill: ${props => (props.nesting ? props.theme.subListItemHeadingArrowColor : props.theme.listItemHeadingArrowColor)};
   transform: ${props => (props.isExpanded ? 'rotate(90deg)' : 'rotate(0deg)')};
   transition: transform 200ms ease-in-out;
 `;
@@ -43,22 +49,23 @@ export const NavigationHeading = styled.h1<{ theme?: navbarTheme }>`
   flex-direction: row;
   a {
     text-decoration: none;
-    color: ${props => (props.theme ? props.theme.headingColor : Grey)};
+    color: ${props => (props.theme ? props.theme.homeLinkColor : Grey)};
     &:hover {
-      color: ${props => (props.theme && props.theme.hover ? props.theme.hover.headingColor : '')};
+      color: ${props =>
+        props.theme && props.theme.hover ? props.theme.hover.subListItemBackgroundOnHover : GreyLight};
     }
   }
 `;
 
 export const Divider = styled.hr`
-  opacity: 0.2;
+  opacity: 0.5;
   margin: ${margin} 0;
 `;
 
 export const Heading = styled.h5<SubNestingProps>`
   font-size: ${props => (props.nesting ? SM : XL)};
-  color: ${props => (props.nesting ? props.theme.textColor : props.theme.hover.navItemBackground)};
-  font-weight: ${props => (props.nesting ? Bold : Medium)};
+  color: ${props => (props.nesting ? props.theme.subListItemHeadingColor : props.theme.listItemHeadingColor)};
+  font-weight: ${props => (props.nesting ? Normal : Medium)};
   padding: ${props => (props.nesting ? '0.5rem' : '0')};
   margin: 0;
 `;
@@ -70,17 +77,19 @@ export const UnorderedList = styled.ul<ArrowProps>`
   margin: 0;
   a {
     text-decoration: none;
-    color: ${props => props.theme.textColor};
+    color: ${props => props.theme.subListItemTextColor};
   }
 `;
 
 export const ListItem = styled.li<SubNestingProps>`
   padding: 0.5rem;
   margin-left: ${props => (props.level ? `${props.level / 3}rem` : '0rem')};
+  color: ${props => props.theme.subListItemTextColor};
   cursor: pointer;
   &:hover {
-    background-color: ${props => props.theme.hover.navItemBackground};
-    color: ${props => props.theme.hover.navItemTextColor};
+    background-color: ${props =>
+      props.theme && props.theme.hover ? props.theme.hover.subListItemBackgroundOnHover : DarkBlue};
+    color: ${props => (props.theme && props.theme.hover ? props.theme.hover.subListItemColorOnHover : White)};
   }
 `;
 
@@ -88,7 +97,7 @@ export const HeadingArrowContainer = styled(flexibleRowDiv)<SubNestingProps>`
   margin-top: ${props => (props.nesting ? '0' : '1rem')};
   margin-bottom: ${props => (props.nesting ? '0' : '0.5rem')};
   margin-left: ${props => (props.level ? `${props.level / 3}rem` : '0rem')};
-  justify-content: unset;
+  justify-content: space-between;
   align-items: center;
   cursor: pointer;
 `;

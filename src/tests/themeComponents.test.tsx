@@ -9,37 +9,37 @@ import { RightRow } from '../styles';
 expect.addSnapshotSerializer(emotionSerializer);
 expect.extend(matchers);
 
-test('SideNavigation background', () => {
+test('Side Navigation Background', () => {
   const tree = renderer.create(<RightRow background={defaultTheme.navBackground}>Content</RightRow>).toJSON();
 
   expect(tree).toHaveStyleRule('background-color', defaultTheme.navBackground);
 });
 
-test('NavigationHeading color & hover color', () => {
+test('Navigation Home Link Color', () => {
   const tree = renderer.create(<NavigationHeading theme={defaultTheme.theme}>Heading</NavigationHeading>).toJSON();
 
-  expect(tree).toHaveStyleRule('color', defaultTheme.theme.headingColor, { target: /a$/ });
+  expect(tree).toHaveStyleRule('color', defaultTheme.theme.homeLinkColor, { target: /a$/ });
 });
 
-test('Arrow Icon color for Headings', () => {
+test('List Item Heading Arrow Color', () => {
   const tree = renderer.create(<Arrow theme={defaultTheme.theme} isExpanded />).toJSON();
 
-  expect(tree).toHaveStyleRule('fill', defaultTheme.theme.hover.navItemBackground);
+  expect(tree).toHaveStyleRule('fill', defaultTheme.theme.listItemHeadingArrowColor);
 });
 
-test('Arrow Icon color for SubHeadings', () => {
+test('Sub List Item Heading Arrow Color', () => {
   const tree = renderer.create(<Arrow theme={defaultTheme.theme} nesting isExpanded />).toJSON();
 
-  expect(tree).toHaveStyleRule('fill', defaultTheme.theme.arrowIconColor);
+  expect(tree).toHaveStyleRule('fill', defaultTheme.theme.subListItemHeadingArrowColor);
 });
 
-test('Nav Items Heading color', () => {
+test('List Item Heading Color', () => {
   const tree = renderer.create(<Heading theme={defaultTheme.theme}>Heading</Heading>).toJSON();
 
-  expect(tree).toHaveStyleRule('color', defaultTheme.theme.hover.navItemBackground);
+  expect(tree).toHaveStyleRule('color', defaultTheme.theme.listItemHeadingColor);
 });
 
-test('Nav Items Sub Heading color', () => {
+test('Sub List Item Heading Color', () => {
   const tree = renderer
     .create(
       <Heading theme={defaultTheme.theme} nesting>
@@ -48,17 +48,19 @@ test('Nav Items Sub Heading color', () => {
     )
     .toJSON();
 
-  expect(tree).toHaveStyleRule('color', defaultTheme.theme.textColor);
+  expect(tree).toHaveStyleRule('color', defaultTheme.theme.subListItemHeadingColor);
 });
 
-test('ListItem background color on hover', () => {
+test('List Item background color on hover', () => {
   const tree = renderer.create(<ListItem theme={defaultTheme.theme}>Item</ListItem>).toJSON();
 
-  expect(tree).toHaveStyleRule('background-color', defaultTheme.theme.hover.navItemBackground, { target: ':hover' });
+  expect(tree).toHaveStyleRule('background-color', defaultTheme.theme.hover.subListItemBackgroundOnHover, {
+    target: ':hover',
+  });
 });
 
-test('ListItem text color on hover', () => {
+test('List Item text color on hover', () => {
   const tree = renderer.create(<ListItem theme={defaultTheme.theme}>Item</ListItem>).toJSON();
 
-  expect(tree).toHaveStyleRule('color', defaultTheme.theme.hover.navItemTextColor, { target: ':hover' });
+  expect(tree).toHaveStyleRule('color', defaultTheme.theme.hover.subListItemColorOnHover, { target: ':hover' });
 });

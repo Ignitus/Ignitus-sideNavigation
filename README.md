@@ -2,7 +2,7 @@ A side navigation package we make use at @ignitus-DesignSystem.
 
 <div align="center">
   <br>
-    <img src="https://media.giphy.com/media/l46ChKeGsmsfE3Un6/giphy.gif" alt="Ignitus.org" width="200">
+    <img src="https://i.imgur.com/t34Aj9h.gif" alt="Workflow">
   <br>
   <h3>Happy Coding ☘️.</h3>
 </div>

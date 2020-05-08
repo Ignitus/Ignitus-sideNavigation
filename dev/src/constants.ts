@@ -2,132 +2,67 @@ import { navItem } from '../../src';
 
 export const navItems: navItem[] = [
   {
-    title: 'Atoms',
+    title: 'List Item Heading 1',
     children: [
       {
-        title: 'Color Palette',
-        route: '/colors',
+        title: 'Sub List Item 1',
+        route: '/SubListItem1',
       },
       {
-        title: 'Iconography',
-        route: '/icons',
+        title: 'Sub List Item 2',
+        route: '/SubListItem2',
       },
       {
-        title: 'Input Fields',
+        title: 'Sub List Item 3',
         children: [
           {
-            title: 'Search',
-            route: '/interface/searchInput',
+            title: 'Sub Sub List Item 1',
+            route: '/SubSubListItem1',
           },
           {
-            title: 'Primary',
-            route: '/interface/primaryInput',
+            title: 'Sub Sub List Item 2',
+            route: '/SubSubListItem2',
           },
         ],
       },
     ],
   },
   {
-    title: 'Molecules',
+    title: 'List Item Heading 2',
     children: [
       {
-        title: 'Overlay',
-        route: '/overlay',
+        title: 'Sub List Item 1',
+        route: '/SubListItem1',
       },
       {
-        title: 'Banners',
-        route: '/interface/banner',
-      },
-    ],
-  },
-  {
-    title: 'Atoms',
-    children: [
-      {
-        title: 'Color Palette',
-        route: '/colors',
+        title: 'Sub List Item 2',
+        route: '/SubListItem2',
       },
       {
-        title: 'Iconography',
-        route: '/icons',
-      },
-      {
-        title: 'Input Fields',
+        title: 'Sub List Item 3',
         children: [
           {
-            title: 'Search',
-            route: '/interface/searchInput',
+            title: 'Sub Sub List Item 1',
+            route: '/SubSubListItem1',
           },
           {
-            title: 'Primary',
-            route: '/interface/primaryInput',
-          },
-        ],
-      },
-    ],
-  },
-  {
-    title: 'Molecules',
-    children: [
-      {
-        title: 'Overlay',
-        route: '/overlay',
-      },
-      {
-        title: 'Banners',
-        route: '/interface/banner',
-      },
-    ],
-  },
-  {
-    title: 'Atoms',
-    children: [
-      {
-        title: 'Color Palette',
-        route: '/colors',
-      },
-      {
-        title: 'Iconography',
-        route: '/icons',
-      },
-      {
-        title: 'Input Fields',
-        children: [
-          {
-            title: 'Search',
-            route: '/interface/searchInput',
+            title: 'Sub Sub List Item 2',
+            route: '/SubSubListItem2',
           },
           {
-            title: 'Primary',
-            route: '/interface/primaryInput',
-          },
-          {
-            title: 'Molecules',
+            title: 'Sub Sub List Item 3',
             children: [
               {
-                title: 'Overlay',
-                route: '/overlay',
+                title: 'Sub Sub Sub List Item 1',
+                route: '/SubSubSubListItem1',
               },
               {
-                title: 'Banners',
-                route: '/interface/banner',
+                title: 'Sub Sub Sub List Item 2',
+                route: '/SubSubSubListItem2',
               },
             ],
           },
         ],
-      },
-    ],
-  },
-  {
-    title: 'Molecules',
-    children: [
-      {
-        title: 'Overlay',
-        route: '/overlay',
-      },
-      {
-        title: 'Banners',
-        route: '/interface/banner',
       },
     ],
   },

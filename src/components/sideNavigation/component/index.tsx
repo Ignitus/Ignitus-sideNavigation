@@ -46,12 +46,10 @@ export const SideNavigation: React.FC<SideNavigationProps> = ({
             <Link to={heading.route}>{heading.title}</Link>
             <RightArrow isExpanded={isExpanded} onClick={() => toggleExpansion(!isExpanded)} />
           </NavigationHeading>
-          {isExpanded && (
-            <NavigationLayersContainer>
-              <Divider />
-              <NavigationLayers navItems={navItems} level={0} />
-            </NavigationLayersContainer>
-          )}
+          <NavigationLayersContainer isExpanded={isExpanded}>
+            <Divider />
+            <NavigationLayers navItems={navItems} level={0} />
+          </NavigationLayersContainer>
         </NavigationContainer>
       </RightRow>
     </ThemeWrapper.Provider>
@@ -60,8 +58,8 @@ export const SideNavigation: React.FC<SideNavigationProps> = ({
 
 const NavigationLayers: React.FC<NavigationLayerProps> = ({ navItems, nesting, level }) => (
   <React.Fragment>
-    {navItems.map((navItem, ind) => (
-      <Layers key={`${navItem.title}_${ind}`} navItem={navItem} nesting={nesting} level={level} />
+    {navItems.map((navItem, index) => (
+      <Layers key={`${navItem.title}_${index}`} navItem={navItem} nesting={nesting} level={level} />
     ))}
   </React.Fragment>
 );

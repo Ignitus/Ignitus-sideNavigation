@@ -9,18 +9,20 @@ import { navItems } from './constants';
 expect.addSnapshotSerializer(emotionSerializer);
 expect.extend(matchers);
 
-const mockColors = ['#000', '#fff', 'red', 'yellow', 'blue', 'green', 'grey'];
+const mockColors = ['#000', '#fff', '#ff0000', '#000066', '#2D2D2D'];
 
 const theme: ThemeWrapperProps = {
   navBackground: mockColors[0],
   theme: {
-    textColor: mockColors[1],
-    headingColor: mockColors[2],
-    arrowIconColor: mockColors[6],
+    homeLinkColor: mockColors[0],
+    listItemHeadingColor: mockColors[3],
+    listItemHeadingArrowColor: mockColors[3],
+    subListItemTextColor: mockColors[0],
+    subListItemHeadingColor: mockColors[0],
+    subListItemHeadingArrowColor: mockColors[2],
     hover: {
-      navItemBackground: mockColors[3],
-      headingColor: mockColors[4],
-      navItemTextColor: mockColors[5],
+      subListItemBackgroundOnHover: mockColors[3],
+      subListItemColorOnHover: mockColors[1],
     },
   },
 };

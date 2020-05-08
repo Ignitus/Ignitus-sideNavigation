@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
 
-import { breakPoint } from '../../../src/styles';
+import { maximumWidthQuery } from '../../../src/styles';
 import { DarkBlue, Grey, GreyLight, WhiteLilac } from '../../../src/helpers/colors';
 
 export const MediumHeading = styled.h3`
@@ -10,7 +10,7 @@ export const MediumHeading = styled.h3`
 
 export const Glow = css`
   color: ${DarkBlue};
-  margin: 2rem 0;
+  margin: 2rem 0.5rem;
 `;
 
 export const Input = styled.input`
@@ -28,14 +28,12 @@ export const Table = styled.div`
   flex-wrap: wrap;
 `;
 
-const maxWidthQuery = `@media (max-width: ${breakPoint}px)`;
-
 export const Row = styled.div`
   display: flex;
   width: 50%;
   align-items: center;
   padding-right: 3rem;
-  ${maxWidthQuery} {
+  ${maximumWidthQuery[4]} {
     width: 100%;
     flex-direction: column;
     flex-wrap: wrap;
@@ -50,7 +48,7 @@ export const Column = styled.div<{ glow?: boolean }>`
     !props.glow
       ? `
     margin-left: auto;
-    ${maxWidthQuery} {
+    ${maximumWidthQuery[3]} {
       margin-left: 0;
     }
   `
