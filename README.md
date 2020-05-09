@@ -109,9 +109,4 @@ Default font is ```'Roboto', sans-serif```. To use different fonts.
 
 Checkout & Play with props of ```SideNavigation``` on here(INSERT LINK).
 
-<div align="center">
-  <br>
-    <img src="https://i.imgur.com/Guys3Zl.gif" alt="Workflow">
-  <br>
-  <h3>Happy Coding ☘️.</h3>
-</div>
+![](https://i.imgur.com/VQ4nde9.gif)
