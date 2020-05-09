@@ -111,7 +111,7 @@ Checkout & Play with props of ```SideNavigation``` on here(INSERT LINK).
 
 <div align="center">
   <br>
-    <img src="https://i.imgur.com/4BDZNxF.gif" alt="Workflow">
+    <img src="https://i.imgur.com/Guys3Zl.gif" alt="Workflow">
   <br>
   <h3>Happy Coding ☘️.</h3>
 </div>
