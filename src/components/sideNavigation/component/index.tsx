@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, BrowserRouter } from 'react-router-dom';
 
 import { ExtensionProps, LayersProps, NavigationLayerProps, SideNavigationProps, navbarTheme } from '../types';
 import {
@@ -39,20 +39,22 @@ export const SideNavigation: React.FC<SideNavigationProps> = ({
   const [isExpanded, toggleExpansion] = useState(window.innerWidth > breakPoint);
 
   return (
-    <ThemeWrapper.Provider value={{ navBackground, theme }}>
-      <RightRow background={navBackground}>
-        <NavigationContainer>
-          <NavigationHeading theme={theme}>
-            <Link to={heading.route}>{heading.title}</Link>
-            <RightArrow isExpanded={isExpanded} onClick={() => toggleExpansion(!isExpanded)} />
-          </NavigationHeading>
-          <NavigationLayersContainer isExpanded={isExpanded}>
-            <Divider />
-            <NavigationLayers navItems={navItems} level={0} />
-          </NavigationLayersContainer>
-        </NavigationContainer>
-      </RightRow>
-    </ThemeWrapper.Provider>
+    <BrowserRouter>
+      <ThemeWrapper.Provider value={{ navBackground, theme }}>
+        <RightRow background={navBackground}>
+          <NavigationContainer>
+            <NavigationHeading theme={theme}>
+              <Link to={heading.route}>{heading.title}</Link>
+              <RightArrow isExpanded={isExpanded} onClick={() => toggleExpansion(!isExpanded)} />
+            </NavigationHeading>
+            <NavigationLayersContainer isExpanded={isExpanded}>
+              <Divider />
+              <NavigationLayers navItems={navItems} level={0} />
+            </NavigationLayersContainer>
+          </NavigationContainer>
+        </RightRow>
+      </ThemeWrapper.Provider>
+    </BrowserRouter>
   );
 };
 

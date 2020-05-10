@@ -10,7 +10,6 @@ import { SM, XL, Medium, Normal } from '../../helpers/fonts';
 const margin = '1rem';
 
 export const NavigationContainer = styled.nav`
-  width: 100%;
   padding: 0 1rem;
 `;
 
