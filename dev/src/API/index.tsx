@@ -5,6 +5,7 @@ import { NavigationHeading as Heading } from '../../../src/components/sideNaviga
 
 import { Emoji } from './components/Emoji';
 import { Column, Input, MediumHeading, Row, Table } from './styles';
+import { deepUpdateObject } from './helpers';
 
 interface DocsProps {
   theme: ThemeWrapperProps;
@@ -28,13 +29,7 @@ export const Docs: React.FC<DocsProps> = ({ theme, updateTheme }) => (
             placeholder="#fff"
             value={theme.theme.homeLinkColor}
             onChange={e => {
-              updateTheme({
-                ...theme,
-                theme: {
-                  ...theme.theme,
-                  homeLinkColor: e.target.value,
-                },
-              });
+              updateTheme(deepUpdateObject(theme, ['theme', 'homeLinkColor'], e.target.value) as ThemeWrapperProps);
             }}
           />
         </Column>
@@ -65,13 +60,7 @@ export const Docs: React.FC<DocsProps> = ({ theme, updateTheme }) => (
             placeholder="#fff"
             value={theme.theme.listItemHeadingColor}
             onChange={e => {
-              updateTheme({
-                ...theme,
-                theme: {
-                  ...theme.theme,
-                  listItemHeadingColor: e.target.value,
-                },
-              });
+              updateTheme(deepUpdateObject(theme, ['theme', 'listItemHeadingColor'], e.target.value));
             }}
           />
         </Column>
@@ -85,6 +74,7 @@ export const Docs: React.FC<DocsProps> = ({ theme, updateTheme }) => (
             placeholder="#fff"
             value={theme.theme.listItemHeadingArrowColor}
             onChange={e => {
+              updateTheme(deepUpdateObject(theme, ['theme', 'listItemHeadingArrowColor'], e.target.value));
               updateTheme({
                 ...theme,
                 theme: {
@@ -105,16 +95,7 @@ export const Docs: React.FC<DocsProps> = ({ theme, updateTheme }) => (
             placeholder="#fff"
             value={theme.theme.subListItemTextColor}
             onChange={e => {
-              updateTheme({
-                ...theme,
-                theme: {
-                  ...theme.theme,
-                  subListItemTextColor: e.target.value,
-                  hover: {
-                    ...theme.theme.hover,
-                  },
-                },
-              });
+              updateTheme(deepUpdateObject(theme, ['theme', 'subListItemTextColor'], e.target.value));
             }}
           />
         </Column>
@@ -128,16 +109,7 @@ export const Docs: React.FC<DocsProps> = ({ theme, updateTheme }) => (
             placeholder="#fff"
             value={theme.theme.subListItemHeadingColor}
             onChange={e => {
-              updateTheme({
-                ...theme,
-                theme: {
-                  ...theme.theme,
-                  subListItemHeadingColor: e.target.value,
-                  hover: {
-                    ...theme.theme.hover,
-                  },
-                },
-              });
+              updateTheme(deepUpdateObject(theme, ['theme', 'subListItemHeadingColor'], e.target.value));
             }}
           />
         </Column>
@@ -151,16 +123,7 @@ export const Docs: React.FC<DocsProps> = ({ theme, updateTheme }) => (
             placeholder="#fff"
             value={theme.theme.subListItemHeadingArrowColor}
             onChange={e => {
-              updateTheme({
-                ...theme,
-                theme: {
-                  ...theme.theme,
-                  subListItemHeadingArrowColor: e.target.value,
-                  hover: {
-                    ...theme.theme.hover,
-                  },
-                },
-              });
+              updateTheme(deepUpdateObject(theme, ['theme', 'subListItemHeadingArrowColor'], e.target.value));
             }}
           />
         </Column>
@@ -175,16 +138,7 @@ export const Docs: React.FC<DocsProps> = ({ theme, updateTheme }) => (
             placeholder="#fff"
             value={theme.theme.hover.subListItemBackgroundOnHover}
             onChange={e => {
-              updateTheme({
-                ...theme,
-                theme: {
-                  ...theme.theme,
-                  hover: {
-                    ...theme.theme.hover,
-                    subListItemBackgroundOnHover: e.target.value,
-                  },
-                },
-              });
+              updateTheme(deepUpdateObject(theme, ['theme', 'hover', 'subListItemBackgroundOnHover'], e.target.value));
             }}
           />
         </Column>
@@ -198,16 +152,7 @@ export const Docs: React.FC<DocsProps> = ({ theme, updateTheme }) => (
             placeholder="#fff"
             value={theme.theme.hover.subListItemColorOnHover}
             onChange={e => {
-              updateTheme({
-                ...theme,
-                theme: {
-                  ...theme.theme,
-                  hover: {
-                    ...theme.theme.hover,
-                    subListItemColorOnHover: e.target.value,
-                  },
-                },
-              });
+              updateTheme(deepUpdateObject(theme, ['theme', 'hover', 'subListItemColorOnHover'], e.target.value));
             }}
           />
         </Column>

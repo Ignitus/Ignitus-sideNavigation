@@ -27,5 +27,4 @@ export const Preview: React.FC = () => {
   );
 };
 
-
 ReactDOM.render(<Preview />, document.getElementById('root'));
