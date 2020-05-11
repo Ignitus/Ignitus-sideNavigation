@@ -44,7 +44,6 @@ exports[`<SideNavigation /> should render 1`] = `
 }
 
 .emotion-15 {
-  width: 100%;
   padding: 0 1rem;
 }
 
@@ -447,7 +446,6 @@ exports[`<SideNavigation /> should render with theme 1`] = `
 }
 
 .emotion-15 {
-  width: 100%;
   padding: 0 1rem;
 }
 
