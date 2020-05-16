@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { Global } from '@emotion/core';
 
 import { ThemeWrapperProps } from '../../src/components/sideNavigation/component';
 import { defaultTheme } from '../../src/constants';
-import { SideNavigation, Container, GlobalStyle } from '../../src';
+import { SideNavigation, Container } from '../../src';
 
 import { Docs } from './API';
-import { StyledContent } from './styles';
+import { StyledContent as Content} from './styles';
 import { navItems } from './constants';
 
 export const Preview: React.FC = () => {
@@ -16,12 +15,11 @@ export const Preview: React.FC = () => {
 
   return (
     <Router>
-      <Global styles={GlobalStyle} />
       <Container>
         <SideNavigation navItems={navItems} navBackground={theme.navBackground} theme={theme.theme} />
-        <StyledContent>
+        <Content>
           <Docs updateTheme={updateTheme} theme={theme} />
-        </StyledContent>
+        </Content>
       </Container>
     </Router>
   );

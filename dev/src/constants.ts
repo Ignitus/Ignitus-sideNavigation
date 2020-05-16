@@ -1,6 +1,4 @@
-import { navItem } from '../../src';
-
-export const navItems: navItem[] = [
+export const navItems = [
   {
     title: 'List Item Heading 1',
     children: [
