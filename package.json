@@ -5,6 +5,7 @@
   "main": "./lib/index.js",
   "scripts": {
     "dev": "parcel dev/index.html --open -p 3000 -d dev/dist",
+    "build-docs": "parcel build dev/index.html -d dev/dist",
     "build": "tsc",
     "test": "jest",
     "lint": "eslint src/**/*.{ts,tsx} --cache",
