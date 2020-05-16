@@ -95,6 +95,7 @@ export const RightRow = styled.div<RightRowProps>`
       overflow-y: auto;
       z-index: 1;
       background-color: ${props => props.background};
+      width: 100%;
     }
   }
   ${Reset}

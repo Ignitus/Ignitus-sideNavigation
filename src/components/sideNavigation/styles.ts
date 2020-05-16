@@ -27,7 +27,6 @@ export const RightArrow = styled(A, { shouldForwardProp: isPropValid })<ArrowPro
   height: 2rem;
   margin-left: auto;
   display: none;
-  margin-right: 2rem;
   transform: ${props => (props.isExpanded ? 'rotate(90deg)' : 'rotate(0deg)')};
   transition: transform 200ms ease-in-out;
 
