@@ -1,5 +1,5 @@
 {
-  "name": "react-side-navigation",
+  "name": "side-navigation-react",
   "version": "1.0.0",
   "description": "Easy, responsive & flexible navigational component that compose declaratively with your application.",
   "main": "./lib/index.js",
