@@ -1,6 +1,6 @@
 {
   "name": "side-navigation-react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Easy, responsive & flexible navigational component that compose declaratively with your application.",
   "main": "./lib/index.js",
   "scripts": {
@@ -66,14 +66,7 @@
     "@emotion/styled": "^10.0.23",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-router-dom": "^5.1.2"
-  },
-  "dependencies": {
-    "@emotion/core": "^10.0.28",
+    "react-router-dom": "^5.1.2",
     "@emotion/is-prop-valid": "^0.8.8",
-    "@emotion/styled": "^10.0.27",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-router-dom": "^5.1.2"
   }
 }
