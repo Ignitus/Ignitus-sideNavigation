@@ -5,3 +5,5 @@ dist
 .cache
 
 dev/.DS_Store
+
+.DS_Store
