@@ -1,7 +1,7 @@
 {
   "name": "react-side-navigation",
   "version": "1.0.0",
-  "description": "React side-navigation.",
+  "description": "Easy, responsive & flexible navigational component that compose declaratively with your application.",
   "main": "./lib/index.js",
   "scripts": {
     "dev": "parcel dev/index.html --open -p 3000 -d dev/dist",
@@ -18,7 +18,9 @@
   },
   "keywords": [
     "react",
-    "side-navigation"
+    "side-navigation",
+    "typescript",
+    "emotion"
   ],
   "author": "divyanshu-rawat",
   "license": "ISC",
