@@ -17,6 +17,7 @@ exports[`<SideNavigation /> should render 1`] = `
     overflow-y: auto;
     z-index: 1;
     background-color: #fafbfd;
+    width: 100%;
   }
 }
 
@@ -71,7 +72,6 @@ exports[`<SideNavigation /> should render 1`] = `
   height: 2rem;
   margin-left: auto;
   display: none;
-  margin-right: 2rem;
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
@@ -419,6 +419,7 @@ exports[`<SideNavigation /> should render with theme 1`] = `
     overflow-y: auto;
     z-index: 1;
     background-color: #fafbfd;
+    width: 100%;
   }
 }
 
@@ -473,7 +474,6 @@ exports[`<SideNavigation /> should render with theme 1`] = `
   height: 2rem;
   margin-left: auto;
   display: none;
-  margin-right: 2rem;
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);

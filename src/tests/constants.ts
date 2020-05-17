@@ -1,4 +1,4 @@
-import { navItem } from "../components/sideNavigation/types";
+import { navItem } from '../components/sideNavigation/types';
 
 export const navItems: navItem[] = [
   {
